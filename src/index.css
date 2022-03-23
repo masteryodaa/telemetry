@@ -1,13 +1,244 @@
+@font-face {
+  font-family: sf;
+  src: url(./sf.ttf);
+}
+
 body {
+  /* background-color: #e9f3ff; */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: sf, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* background-image: linear-gradient(to right, #4299e1,#38b2ac); */
+
+  background: #e0eafc; /* fallback for old browsers
+background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  Chrome 10-25, Safari 5.1-6
+background: linear-gradient(to right, #CFDEF3, #E0EAFC); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+
+/* background: url('./svg.svg');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #E0EAFC; */
+  /* border-bottom: 1px solid #eaeaea; */
+}
+
+.logo-right {
+  display: flex;
+  align-items: center;
+}
+
+#navLogo {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
+  display: contents;
+  text-shadow: 0px 0px 2px #003049;
+
+}
+
+.logo-left {
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh;
+  /* padding: 10px; */
+}
+
+.body-left {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin-left: 2rem;
+  width: 50vw;
+}
+
+.body-right {
+  display: flex;
+  width: 50vw;
+  margin-right: 5rem;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* height: 100%; */
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  /* glassmorphism */
+  background-color: #e9f3ff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #eaeaea;
+  border: 1px solid #eaeaea;
+}
+
+.variables {
+  /* margin: 20px 10px; */
+}
+
+.dates {
+  display: flex;
+  align-items: baseline;
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input{
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.from {
+  margin-right: 2rem;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.process {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 10px; */
+}
+
+
+.button {
+  background-color: black;
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  width: 10rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  transition: all 0s ease-in-out;
+  /* padding: 0.8rem 1rem; */
+  /* text-shadow:  0px 0px 10px #fff; */
+}
+
+.telemetry  {
+  text-shadow: 0px 0px 3px #e0e0e0;
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  #title {
+    display: none;
+  }
+
+  .telemetry {
+    display: block;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 100px 0;
+    width: 100vw;
+  }
+
+  .body-left {
+    width: 100vw;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 3rem; */
+    /* border: 2px solid #000; */
+  }
+
+  .body-right {
+    width: 100vw;
+    margin: 0;
+    padding: 1.5rem;
+    /* border: 2px solid #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 3rem; */
+    margin-top: 2rem;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .dates {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .date {
+    display: block;
+  }
+
+  .from {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .to {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 !important;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+a{
+  text-decoration: none;
 }

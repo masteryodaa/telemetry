@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import Body from './Body';
+import Navbar from './Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Result from './Result';
 
 function App() {
+
+  const [data, setData] = useState([
+    [{}],
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+
+      <Router>
+
+        <Navbar />
+        <p className="telemetry h1 mt-4 text-center">
+          Telemetry.AI
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <Routes>
+          <Route path="/" element={<Body setData={(x)=>setData(x)} />}></Route>
+          <Route path="/result" element={<Result data={data} />}></Route>
+        </Routes>
+
+      </Router>
+
     </div>
   );
 }
