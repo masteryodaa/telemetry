@@ -10,12 +10,17 @@ function Selector(props) {
 
 
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-        { value: 'red', label: 'red' },
-        { value: 'blue', label: 'blue' },
-        { value: 'green', label: 'green' }
+        { value: 'ME Torque (Avg.)', label: 'ME Torque (Avg.)' },
+        { value: 'ME Speed (Avg.)', label: 'ME Speed (Avg.)' },
+        { value: 'ME Mass FO Flow Rate (Avg.)', label: 'ME Mass FO Flow Rate (Avg.)' },
+        { value: 'True Wind Speed at Anemometer Height (Avg.)', label: 'True Wind Speed at Anemometer Height (Avg.)' },
+        { value: 'True Wind Direction at Anemometer Height (Avg.)', label: 'True Wind Direction at Anemometer Height (Avg.)' },
+        { value: 'Speed Through Water (Avg.)', label: 'Speed Through Water (Avg.)' },
+        { value: 'Rate of turn (Avg.)', label: 'Rate of turn (Avg.)' },
+        { value: 'Sea Water Depth (Avg.)', label: 'Sea Water Depth (Avg.)' },
+        { value: 'Relative Wind Speed at Anemometer Height (Avg.)', label: 'Relative Wind Speed at Anemometer Height (Avg.)' },
+        { value: 'Relative Wind Direction at Anemometer Height (Avg.)', label: 'Relative Wind Direction at Anemometer Height (Avg.)' },
+        { value: 'ME Shaft Power (Avg.)', label: 'ME Shaft Power (Avg.)' }
     ]
 
 
@@ -39,21 +44,37 @@ function Selector(props) {
     }
 
 
+
     const sendData = () => {
 
-        console.log('sending data');
-        console.log(independentVariables);
-        console.log(dependentVariables);
-        console.log('from ', fromDate);
-        console.log('to ', toDate);
-        console.log('inputDate ', inputDate);
+        // console.log(independentVariables);
+        // console.log(dependentVariables);
+        // console.log('from ', fromDate);
+        // console.log('to ', toDate);
+        // console.log('inputDate ', inputDate);
+
+        let independentArray = [];
+        let dependentArray = [];
+
+        independentVariables.forEach(element => {
+            independentArray.push(element.value);
+        });
+
+        dependentVariables.forEach(element => {
+            dependentArray.push(element.value);
+        });
+
 
         const formdata = new FormData();
-        formdata.append('independentVariables', independentVariables);
-        formdata.append('dependentVariables', dependentVariables);
-        formdata.append('fromDate', fromDate);
-        formdata.append('toDate', toDate);
-        formdata.append('inputDate', inputDate);
+        formdata.append('Independent_var', independentArray);
+        console.log(independentArray);
+
+        formdata.append('dependent_var', dependentArray);
+        console.log(dependentArray);
+
+        formdata.append('date_from', fromDate);
+        formdata.append('date_to', toDate);
+        formdata.append('date_inp', inputDate);
 
         fetch('http://127.0.0.1:5000/', {
             method: 'POST',
@@ -70,7 +91,29 @@ function Selector(props) {
             .then(
                 data => {
                     console.log(data);
-                    props.setData(data);
+                    window.res_data = data;
+
+                    // props.setG1(data[Object.keys(data)[0]]);
+                    // props.setG2(data[Object.keys(data)[1]]);
+                    // props.setG3(data[Object.keys(data)[2]]);
+                    // props.setG4(data[Object.keys(data)[3]]);
+                    // props.setG5(data[Object.keys(data)[4]]);
+                    // props.setG6(data[Object.keys(data)[5]]);
+                    // props.setG7(data[Object.keys(data)[6]]);
+                    // props.setG8(data[Object.keys(data)[7]]);
+                    // props.setG9(data[Object.keys(data)[8]]);
+                    // props.setG10(data[Object.keys(data)[9]]);
+                    // props.setG11(data[Object.keys(data)[10]]);
+
+                    // console.log(props.g1);
+
+                    props.setLoaded(true);
+
+                    // console.log('window.res_data');
+                    // console.log(window.res_data);
+
+                    // props.setData(data);
+                    // console.log('props data',props.data);
                 }
             )
 
@@ -135,8 +178,11 @@ function Selector(props) {
                 <Link to={'/result'}>
                     <div className="button text-center text-white noselect" onClick={
 
-                        // sendData
-                        () => {console.log('sending data');}
+                        () => {
+                            console.log('sending data');
+                            sendData();
+                        }
+
                     }>
                         Process
                     </div>
