@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 function Loading() {
+
     return (
         <div className='loading'>
             <div className="spinner-border text-danger mb-5" style={{"width": '10rem', 'height': '10rem'}} role="status">

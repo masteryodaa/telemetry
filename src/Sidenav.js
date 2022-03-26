@@ -7,7 +7,7 @@ function Sidenav() {
         <div className='sideContainer'>
 
             <div id="nav">
-                <ul class="sidebar_nav">
+                <ul className="sidebar_nav">
                     <li>
                         <a href="#graph1"
                             onClick={() => {
@@ -21,9 +21,12 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph1');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
-                                
+
                             }}
                         >
                             <VscGraphLine className='sidevanIcon' />
@@ -42,7 +45,10 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph2');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
@@ -63,7 +69,11 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph3');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
 
@@ -84,7 +94,11 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph4');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }
                             }
@@ -105,7 +119,10 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph5');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
@@ -125,7 +142,10 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph6');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
@@ -145,7 +165,10 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph7');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
 
                             }}
@@ -166,7 +189,10 @@ function Sidenav() {
                                 document.getElementById('graph9').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph8');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
@@ -186,7 +212,10 @@ function Sidenav() {
                                 document.getElementById('graph8').style.display = 'none';
                                 document.getElementById('graph10').style.display = 'none';
                                 let x = document.getElementById('graph9');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
@@ -206,7 +235,10 @@ function Sidenav() {
                                 document.getElementById('graph8').style.display = 'none';
                                 document.getElementById('graph9').style.display = 'none';
                                 let x = document.getElementById('graph10');
-                                x.style.display = 'block';
+                                x.style.display = 'flex';
+                                x.style.flexDirection = 'column';
+                                x.style.alignItems = 'center';
+                                x.style.justifyContent = 'center';
                                 x.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >

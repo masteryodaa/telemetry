@@ -6,41 +6,54 @@ import Sidenav from './Sidenav';
 // import json from './data.json'
 
 function Result(
-  // { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11 }
+  { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11,
+    setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11,
+  }
 ) {
 
-  let newData = window.res_data;
+  useEffect(() => {
+    setG1(g1);
+    setG2(g2);
+    setG3(g3);
+    setG4(g4);
+    setG5(g5);
+    setG6(g6);
+    setG7(g7);
+    setG8(g8);
+    setG9(g9);
+    setG10(g10);
+    setG11(g11);
+  }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11])
+
+
+  // let newData = window.res_data;
 
   // console.log(newData);
 
-  let g1 = newData[Object.keys(newData)[0]];
-  let g2 = newData[Object.keys(newData)[1]];
-  let g3 = newData[Object.keys(newData)[2]];
-  let g4 = newData[Object.keys(newData)[3]];
-  let g5 = newData[Object.keys(newData)[4]];
-  let g6 = newData[Object.keys(newData)[5]];
-  let g7 = newData[Object.keys(newData)[6]];
-  let g8 = newData[Object.keys(newData)[7]];
-  let g9 = newData[Object.keys(newData)[8]];
-  let g10 = newData[Object.keys(newData)[9]];
-  let g11 = newData[Object.keys(newData)[10]];
+  // let g1 = newData[Object.keys(newData)[0]];
+  // let g2 = newData[Object.keys(newData)[1]];
+  // let g3 = newData[Object.keys(newData)[2]];
+  // let g4 = newData[Object.keys(newData)[3]];
+  // let g5 = newData[Object.keys(newData)[4]];
+  // let g6 = newData[Object.keys(newData)[5]];
+  // let g7 = newData[Object.keys(newData)[6]];
+  // let g8 = newData[Object.keys(newData)[7]];
+  // let g9 = newData[Object.keys(newData)[8]];
+  // let g10 = newData[Object.keys(newData)[9]];
+  // let g11 = newData[Object.keys(newData)[10]];
 
-
-  // console.log(g1.date);
+  console.log(g1);
+  console.log(g1.date);
+  console.log(g1.prediction);
 
   let g1date = [];
 
 
-  g1.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
-
-    let a = new Date(y * 1000);
-
-    g1date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  });
+  // g1.date.forEach(function (element) {
+  //   g1date.push(
+  //     new Date()
+  //   );
+  // });
 
   let g1x1 = [];
   let g1x1Error = [];
@@ -52,16 +65,16 @@ function Result(
     g1y1Error.push(g1.prediction[i] + g1.error);
   }
 
-  g1.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g1.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g1x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g1x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g1x2 = [];
   let g1x2Error = [];
@@ -72,16 +85,16 @@ function Result(
     g1y2Error.push(g1.prediction[i] - g1.error);
   }
 
-  g1.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g1.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g1x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g1x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g1mean = [];
 
@@ -92,16 +105,16 @@ function Result(
 
   let g2date = [];
 
-  g2.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g2.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g2date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g2date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g2x1 = [];
   let g2x1Error = [];
@@ -112,16 +125,16 @@ function Result(
     g2y1Error.push(g2.prediction[i] + g2.error);
   }
 
-  g2.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g2.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g2x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g2x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g2x2 = [];
   let g2x2Error = [];
@@ -132,16 +145,16 @@ function Result(
     g2y2Error.push(g2.prediction[i] - g2.error);
   }
 
-  g2.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g2.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g2x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g2x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g2mean = [];
 
@@ -151,16 +164,16 @@ function Result(
 
   let g3date = [];
 
-  g3.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g3.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g3date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g3date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g3x1 = [];
   let g3x1Error = [];
@@ -171,16 +184,16 @@ function Result(
     g3y1Error.push(g3.prediction[i] + g3.error);
   }
 
-  g3.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g3.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g3x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g3x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g3x2 = [];
   let g3x2Error = [];
@@ -191,16 +204,16 @@ function Result(
     g3y2Error.push(g3.prediction[i] - g3.error);
   }
 
-  g3.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g3.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g3x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g3x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g3mean = [];
 
@@ -211,16 +224,16 @@ function Result(
 
   let g4date = [];
 
-  g4.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g4.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g4date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g4date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g4x1 = [];
   let g4x1Error = [];
@@ -231,16 +244,16 @@ function Result(
     g4y1Error.push(g4.prediction[i] + g4.error);
   }
 
-  g4.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g4.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g4x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g4x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g4x2 = [];
   let g4x2Error = [];
@@ -251,16 +264,16 @@ function Result(
     g4y2Error.push(g4.prediction[i] - g4.error);
   }
 
-  g4.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g4.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g4x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g4x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g4mean = [];
 
@@ -270,16 +283,16 @@ function Result(
 
   let g5date = [];
 
-  g5.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g5.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g5date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g5date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g5x1 = [];
   let g5x1Error = [];
@@ -290,16 +303,16 @@ function Result(
     g5y1Error.push(g5.prediction[i] + g5.error);
   }
 
-  g5.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g5.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g5x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g5x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g5x2 = [];
   let g5x2Error = [];
@@ -310,16 +323,16 @@ function Result(
     g5y2Error.push(g5.prediction[i] - g3.error);
   }
 
-  g5.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g5.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g5x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g5x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g5mean = [];
 
@@ -329,16 +342,16 @@ function Result(
 
   let g6date = [];
 
-  g6.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g6.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g6date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g6date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g6x1 = [];
   let g6x1Error = [];
@@ -349,16 +362,16 @@ function Result(
     g6y1Error.push(g6.prediction[i] + g6.error);
   }
 
-  g6.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g6.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g6x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g6x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g6x2 = [];
   let g6x2Error = [];
@@ -369,16 +382,16 @@ function Result(
     g6y2Error.push(g6.prediction[i] - g6.error);
   }
 
-  g6.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g6.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g6x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g6x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g6mean = [];
 
@@ -388,16 +401,16 @@ function Result(
 
   let g7date = [];
 
-  g7.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g7.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g7date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g7date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g7x1 = [];
   let g7x1Error = [];
@@ -408,16 +421,16 @@ function Result(
     g7y1Error.push(g7.prediction[i] + g7.error);
   }
 
-  g7.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g7.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g7x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g7x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g7x2 = [];
   let g7x2Error = [];
@@ -428,16 +441,16 @@ function Result(
     g7y2Error.push(g7.prediction[i] - g7.error);
   }
 
-  g7.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g7.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g7x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g7x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g7mean = [];
 
@@ -447,16 +460,16 @@ function Result(
 
   let g8date = [];
 
-  g8.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g8.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g8date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g8date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g8x1 = [];
   let g8x1Error = [];
@@ -467,16 +480,16 @@ function Result(
     g8y1Error.push(g8.prediction[i] + g8.error);
   }
 
-  g8.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g8.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g8x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g8x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g8x2 = [];
   let g8x2Error = [];
@@ -487,16 +500,16 @@ function Result(
     g8y2Error.push(g8.prediction[i] - g8.error);
   }
 
-  g8.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g8.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g8x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g8x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g8mean = [];
 
@@ -506,16 +519,16 @@ function Result(
 
   let g9date = [];
 
-  g9.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g9.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g9date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g9date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g9x1 = [];
   let g9x1Error = [];
@@ -526,16 +539,16 @@ function Result(
     g9y1Error.push(g9.prediction[i] + g9.error);
   }
 
-  g9.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g9.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g9x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g9x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g9x2 = [];
   let g9x2Error = [];
@@ -546,16 +559,16 @@ function Result(
     g9y2Error.push(g9.prediction[i] - g9.error);
   }
 
-  g9.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g9.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g9x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g9x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g9mean = [];
 
@@ -565,16 +578,16 @@ function Result(
 
   let g10date = [];
 
-  g10.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g10.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g10date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g10date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g10x1 = [];
   let g10x1Error = [];
@@ -585,16 +598,16 @@ function Result(
     g10y1Error.push(g10.prediction[i] + g10.error);
   }
 
-  g10.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g10.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g10x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g10x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g10x2 = [];
   let g10x2Error = [];
@@ -605,16 +618,16 @@ function Result(
     g10y2Error.push(g10.prediction[i] - g10.error);
   }
 
-  g10.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g10.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g10x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g10x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g10mean = [];
 
@@ -624,16 +637,16 @@ function Result(
 
   let g11date = [];
 
-  g11.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g11.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g11date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g11date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g11x1 = [];
   let g11x1Error = [];
@@ -644,16 +657,16 @@ function Result(
     g11y1Error.push(g11.prediction[i] + g11.error);
   }
 
-  g11.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g11.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g11x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g11x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g11x2 = [];
   let g11x2Error = [];
@@ -664,16 +677,16 @@ function Result(
     g11y2Error.push(g11.prediction[i] - g11.error);
   }
 
-  g11.date.forEach(function (element) {
-    let z = "" + element;
-    let x = z.substring(0, 10);
-    let y = parseInt(x);
+  // g11.date.forEach(function (element) {
+  //   let z = "" + element;
+  //   let x = z.substring(0, 10);
+  //   let y = parseInt(x);
 
-    let a = new Date(y * 1000);
+  //   let a = new Date(y * 1000);
 
-    g11x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+  //   g11x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  });
+  // });
 
   let g11mean = [];
 
@@ -681,28 +694,31 @@ function Result(
     g11mean.push(g11.mean);
   }
 
+
+
   return (
     <div className='container mt-5'>
       <Sidenav />
 
-      <p className='text-center mb-5 resTitle'>Graph Visaulisation</p>
+      <p className='text-center mb-5 resTitle'>Prediction dashboard</p>
 
 
       <div className="graph_container">
 
         <div className="graph_left">
 
-          <div className="graph1 graph leftgraph my-1" id='graph1'>
+          <div className="graph graph1 leftgraph" id='graph1'>
 
             <Plot
 
               data={[
                 {
-                  x: g1date.slice(0, 10),
-                  y: g1.prediction.slice(0, 10),
+                  x: g1.date,
+                  y: g1.prediction,
                   type: 'scatter',
+                  mode: 'markers',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -714,58 +730,38 @@ function Result(
                     width: 2
                   },
                   name: g1.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g1x1Error.slice(0, 10),
-                  y: g1y1Error.slice(0, 10),
+                  x: g1.date,
+                  y: g1y1Error,
                   mode: 'none',
-                  fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fill: 'tonextx',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g1x2Error.slice(0, 10),
-                  y: g1y2Error.slice(0, 10),
+                  x: g1.date,
+                  y: g1y2Error,
                   mode: 'none',
-                  fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fill: 'tonextx',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
-                {
-                  x: g1date.slice(0, 10),
-                  y: g1.prediction.slice(0, 10),
-                  type: 'scatter',
-                  error_y: {
-                    color: '#ff0000',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: g1.error,
-                    visible: true,
-                  },
-                  line: {
-                    color: 'blue',
-                    width: 2
-                  },
-                  name: g1.label,
-                  marker: { color: 'green' },
-                  showlegend: false,
-                },
 
                 {
-                  x: g1date.slice(0, 10),
-                  y: g1mean.slice(0, 10),
+                  x: g1.date,
+                  y: g1mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -778,23 +774,47 @@ function Result(
                   }
                 },
 
-                // {
-                //   x: g1date,
-                //   y: g1.user_qry,
-                //   type: 'markers',
-                //   mode: 'markers',
-                //   marker: {
-                //     color: 'purple',
-                //     symbol: 'diamond',
-                //   },
-                // }
+          
+                {
+                  x: g1.date,
+                  y: g1.prediction,
+                  type: 'scatter',
+                  error_y: {
+                    color: '#fdd85d',
+                    thickness: 1,
+                    width: 0,
+                    type: 'constant',
+                    value: g1.error,
+                    visible: true,
+                  },
+                  line: {
+                    color: 'blue',
+                    width: 2
+                  },
+                  name: g1.label,
+                  marker: { color: 'green', size: 3 },
+                  showlegend: false,
+                },
+
+
+                {
+                  x: [g1.qry_date],
+                  y:[ g1.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7
+                  },
+                }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g1.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -835,21 +855,23 @@ function Result(
 
 
             />
+
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g1.pred_err} </small>
+            <small className='mb-1 p-0 secondary'>deviation from historical mean : {g1.mean_err} </small>
           </div>
 
-
-          
 
           <div className="graph graph2 leftgraph" id='graph2'>
             <Plot
 
               data={[
                 {
-                  x: g2date,
+                  x: g2.date,
                   y: g2.prediction,
                   type: 'scatter',
+                  mode: 'markers',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -866,29 +888,30 @@ function Result(
                 },
 
                 {
-                  x: g2x1Error,
+                  x: g2.date,
                   y: g2y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g2x2Error,
+                  x: g2.date,
                   y: g2y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g2date,
+                  x: g2.date,
                   y: g2.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -900,19 +923,19 @@ function Result(
                     width: 2
                   },
                   name: g2.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 4 },
                   showlegend: false,
                 },
 
                 {
-                  x: g2date,
+                  x: g2.date,
                   y: g2mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -923,15 +946,28 @@ function Result(
                   marker: {
                     size: 1,
                   }
-                }
+                },
+
+                {
+                  x: [g2.qry_date],
+                  y: [g2.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
+                },
 
               ]}
 
               layout={{
 
                 autosize: false,
-                width: 500,
-                height: 300, title: g2.label + " Plot",
+                width: 550,
+                height: 350, title: g2.label + " Plot",
                 xaxis: {
                   title: 'Time',
                   titlefont: {
@@ -971,6 +1007,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g2.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g2.mean_err}%</small>
           </div>
 
           <div className="graph graph3 leftgraph" id='graph3'>
@@ -978,11 +1016,13 @@ function Result(
 
               data={[
                 {
-                  x: g3date,
+                  x: g3.date,
                   y: g3.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -999,29 +1039,30 @@ function Result(
                 },
 
                 {
-                  x: g3x1Error,
+                  x: g3.date,
                   y: g3y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g3x2Error,
+                  x: g3.date,
                   y: g3y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g3date,
+                  x: g3.date,
                   y: g3.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1033,19 +1074,19 @@ function Result(
                     width: 2
                   },
                   name: g3.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g3date,
+                  x: g3.date,
                   y: g3mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1056,14 +1097,27 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+
+                {
+                  x: [g3.qry_date],
+                  y: [g3.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g3.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1104,6 +1158,9 @@ function Result(
 
 
             />
+
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g3.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g3.mean_err}%</small>
           </div>
 
           <div className="graph graph4 leftgraph" id='graph4'>
@@ -1111,11 +1168,13 @@ function Result(
 
               data={[
                 {
-                  x: g4date,
+                  x: g4.date,
                   y: g4.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1132,29 +1191,30 @@ function Result(
                 },
 
                 {
-                  x: g4x1Error,
+                  x: g4.date,
                   y: g4y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g4x2Error,
+                  x: g4.date,
                   y: g4y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g4date,
+                  x: g4.date,
                   y: g4.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1166,19 +1226,19 @@ function Result(
                     width: 2
                   },
                   name: g4.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g4date,
+                  x: g4.date,
                   y: g4mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1189,14 +1249,27 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+
+                {
+                  x: [g4.qry_date],
+                  y: [g4.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g4.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1237,6 +1310,9 @@ function Result(
 
 
             />
+
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g4.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g4.mean_err}%</small>
           </div>
 
           <div className="graph graph5 leftgraph" id='graph5'>
@@ -1244,11 +1320,13 @@ function Result(
 
               data={[
                 {
-                  x: g5date,
+                  x: g5.date,
                   y: g5.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1265,29 +1343,30 @@ function Result(
                 },
 
                 {
-                  x: g5x1Error,
+                  x: g5.date,
                   y: g5y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g5x2Error,
+                  x: g5.date,
                   y: g5y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g5date,
+                  x: g5.date,
                   y: g5.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1299,19 +1378,19 @@ function Result(
                     width: 2
                   },
                   name: g5.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g5date,
+                  x: g5.date,
                   y: g5mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1322,14 +1401,27 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+
+                {
+                  x: [g5.qry_date],
+                  y: [g5.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g5.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1370,6 +1462,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g5.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g5.mean_err}%</small>
           </div>
 
           <div className="graph graph6 leftgraph" id='graph6'>
@@ -1377,11 +1471,13 @@ function Result(
 
               data={[
                 {
-                  x: g6date,
+                  x: g6.date,
                   y: g6.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1398,29 +1494,30 @@ function Result(
                 },
 
                 {
-                  x: g6x1Error,
+                  x: g6.date,
                   y: g6y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g6x2Error,
+                  x: g6.date,
                   y: g6y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g6date,
+                  x: g6.date,
                   y: g6.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1432,19 +1529,19 @@ function Result(
                     width: 2
                   },
                   name: g6.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g6date,
+                  x: g6.date,
                   y: g6mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1455,14 +1552,27 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+
+                {
+                  x: [g6.qry_date],
+                  y: [g6.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g6.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1503,6 +1613,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g6.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g6.mean_err}%</small>
           </div>
 
           <div className="graph graph7 leftgraph" id='graph7'>
@@ -1510,11 +1622,13 @@ function Result(
 
               data={[
                 {
-                  x: g7date,
+                  x: g7.date,
                   y: g7.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1531,29 +1645,30 @@ function Result(
                 },
 
                 {
-                  x: g7x1Error,
+                  x: g7.date,
                   y: g7y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g7x2Error,
+                  x: g7.date,
                   y: g7y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g7date,
+                  x: g7.date,
                   y: g7.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1565,19 +1680,19 @@ function Result(
                     width: 2
                   },
                   name: g7.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g7date,
+                  x: g7.date,
                   y: g7mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1588,14 +1703,27 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+
+                {
+                  x: [g7.qry_date],
+                  y: [g7.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g7.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1636,6 +1764,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g7.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g7.mean_err}%</small>
           </div>
 
           <div className="graph graph8 leftgraph" id='graph8'>
@@ -1643,11 +1773,12 @@ function Result(
 
               data={[
                 {
-                  x: g8date,
+                  x: g8.date,
                   y: g8.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1659,34 +1790,35 @@ function Result(
                     width: 2
                   },
                   name: g8.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g8x1Error,
-                  y: g8y1Error,
+                  x: g8.date,
+                  y: g8y1Error, 
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g8x2Error,
+                  x: g8.date,
                   y: g8y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g8date,
+                  x: g8.date,
                   y: g8.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1698,19 +1830,19 @@ function Result(
                     width: 2
                   },
                   name: g8.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g8date,
+                  x: g8.date,
                   y: g8mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1721,14 +1853,27 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+
+                {
+                  x: [g8.qry_date],
+                  y: [g8.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g8.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1769,6 +1914,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g8.pred_err}</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g8.mean_err}%</small>
           </div>
 
           <div className="graph graph9 leftgraph" id='graph9'>
@@ -1776,11 +1923,13 @@ function Result(
 
               data={[
                 {
-                  x: g9date,
+                  x: g9.date,
                   y: g9.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1797,29 +1946,30 @@ function Result(
                 },
 
                 {
-                  x: g9x1Error,
+                  x: g9.date,
                   y: g9y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g9x2Error,
+                  x: g9.date,
                   y: g9y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g9date,
+                  x: g9.date,
                   y: g9.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1831,19 +1981,19 @@ function Result(
                     width: 2
                   },
                   name: g9.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g9date,
+                  x: g9.date,
                   y: g9mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1854,14 +2004,26 @@ function Result(
                   marker: {
                     size: 1,
                   }
+                },
+                {
+                  x: [g9.qry_date],
+                  y: [g9.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
                 }
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g9.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1902,6 +2064,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g9.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g9.mean_err}%</small>
           </div>
 
 
@@ -1910,11 +2074,13 @@ function Result(
 
               data={[
                 {
-                  x: g10date,
+                  x: g10.date,
                   y: g10.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
+
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1931,29 +2097,30 @@ function Result(
                 },
 
                 {
-                  x: g10x1Error,
+                  x: g10.date,
                   y: g10y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g10x2Error,
+                  x: g10.date,
                   y: g10y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g10date,
+                  x: g10.date,
                   y: g10.prediction,
                   type: 'scatter',
+                  mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1965,19 +2132,19 @@ function Result(
                     width: 2
                   },
                   name: g10.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'green', size: 3 },
                   showlegend: false,
                 },
 
                 {
-                  x: g10date,
+                  x: g10.date,
                   y: g10mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1988,14 +2155,28 @@ function Result(
                   marker: {
                     size: 1,
                   }
-                }
+                },
+
+                {
+                  x: [g10.qry_date],
+                  y: [g10.user_qry],
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
+                },
+
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g10.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -2036,6 +2217,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g10.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g10.mean_err}%</small>
           </div>
 
 
@@ -2050,17 +2233,20 @@ function Result(
             <Plot
 
               data={[
+
+                
                 {
-                  x: g11date.slice(0, 10),
-                  y: g11.prediction.slice(0, 10),
+                  x: g11.date,
+                  y: g11.prediction,
                   type: 'scatter',
+                  // mode: 'markers+lines',
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: g11.error,
-                    visible: true,
+                    visible: false,
                   },
                   line: {
                     color: 'blue',
@@ -2071,54 +2257,34 @@ function Result(
                   showlegend: false,
                 },
 
+
                 {
-                  x: g11x1Error.slice(0, 10),
-                  y: g11y1Error.slice(0, 10),
+                  x: g11.date,
+                  y: g11y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g11x2Error.slice(0, 10),
-                  y: g11y2Error.slice(0, 10),
+                  x: g11.date,
+                  y: g11y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#ffbf69',
+                  fillcolor: '#fdd85d',
                   showlegend: false,
                 },
 
                 {
-                  x: g11date.slice(0, 10),
-                  y: g11.prediction.slice(0, 10),
-                  type: 'scatter',
-                  error_y: {
-                    color: '#ff0000',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: g11.error,
-                    visible: true,
-                  },
-                  line: {
-                    color: 'blue',
-                    width: 2
-                  },
-                  name: g11.label,
-                  marker: { color: 'green' },
-                  showlegend: false,
-                },
-
-                {
-                  x: g11date.slice(0, 10),
-                  y: g11mean.slice(0, 10),
+                  x: g11.date,
+                  y: g11mean,
                   line: {
                     color: 'black',
                     width: 2
                   },
                   error_y: {
-                    color: '#ff0000',
+                    color: '#fdd85d',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -2129,14 +2295,58 @@ function Result(
                   marker: {
                     size: 1,
                   }
-                }
+                },
+
+                
+
+            
+                {
+                  x: g11.date,
+                  y: g11.prediction,
+                  type: 'scatter',
+                  mode: 'markers+lines',
+                  error_y: {
+                    color: '#fdd85d',
+                    thickness: 0,
+                    width: 0,
+                    type: 'constant',
+                    value: g11.error,
+                    visible: true,
+                  },
+                  line: {
+                    color: 'blue',
+                    width: 2
+                  },
+                  name: g11.label,
+                  marker: {
+                    color: 'green',
+                    size: 4
+                  },
+                  showlegend: false,
+                },
+
+                {
+                  x:[g11.qry_date],
+                  y: [g11.user_qry],
+                  
+                  type: 'scatter',
+                  mode: 'markers',
+                  marker: {
+                    color: 'purple',
+                    symbol: 'diamond',
+                    size: 7,
+                  },
+                  name: 'user query',
+                },
+
+                
 
               ]}
 
               layout={{
                 autosize: false,
-                width: 500,
-                height: 300,
+                width: 550,
+                height: 350,
                 title: g11.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -2177,6 +2387,8 @@ function Result(
 
 
             />
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g11.pred_err}% </small>
+            <small className='mb-1 p-0 secondary'>deviation from historical mean :  {g11.mean_err}% </small> 
           </div>
 
           <p>Dependent Graph</p>

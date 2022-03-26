@@ -9,7 +9,9 @@ function Navbar() {
             <div className="logo-right">
                 <Link to='/' >
                     <img id='navLogo' src={icon} alt="logo" width='200px'
-                    //  onClick={() => { window.location.reload(); }}
+                     onClick={() => { 
+                         
+                      }}
                     />
                 </Link>
             </div>
@@ -17,7 +19,7 @@ function Navbar() {
 
             <div className="title">
                 {/* <p id='title'>Telemetry.AI</p> */}
-                <button type="button" className="btn btn-outline-primary" disabled>Telemetry.AI</button>
+                <button type="button" className="btn btn-outline-primary aiTitle" disabled>Telemetry.AI</button>
 
             </div>
 

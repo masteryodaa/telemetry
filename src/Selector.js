@@ -27,9 +27,9 @@ function Selector(props) {
     const [independentVariables, setIndependentVariables] = useState([]);
     const [dependentVariables, setDependentVariables] = useState([]);
 
-    const [fromDate, setFromDate] = useState(new Date());
-    const [toDate, setToDate] = useState(new Date());
-    const [inputDate, setInputDate] = useState(new Date());
+    const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
+    const [toDate, setToDate] = useState(new Date('2021/05/25'));
+    const [inputDate, setInputDate] = useState(new Date('2021/05/05'));
 
     const changeFromDate = (date) => {
         setFromDate(date)
@@ -47,11 +47,19 @@ function Selector(props) {
 
     const sendData = () => {
 
+        props.setLoaded(false);
+
+
+
+        // window.res_data = null;
+
         // console.log(independentVariables);
         // console.log(dependentVariables);
-        // console.log('from ', fromDate);
-        // console.log('to ', toDate);
-        // console.log('inputDate ', inputDate);
+       
+
+        console.log('from ', fromDate);
+        console.log('to ', toDate);
+        console.log('inputDate ', inputDate);
 
         let independentArray = [];
         let dependentArray = [];
@@ -76,10 +84,13 @@ function Selector(props) {
         formdata.append('date_to', toDate);
         formdata.append('date_inp', inputDate);
 
-        fetch('http://127.0.0.1:5000/', {
-            method: 'POST',
-            body: formdata,
-        })
+        fetch(
+            // 'http://127.0.0.1:5000/',
+            'http://127.0.0.1:3001/',
+            {
+                method: 'POST',
+                body: formdata,
+            })
 
             .then(
                 (response) => {
@@ -91,19 +102,19 @@ function Selector(props) {
             .then(
                 data => {
                     console.log(data);
-                    window.res_data = data;
+                    // window.res_data = data;
 
-                    // props.setG1(data[Object.keys(data)[0]]);
-                    // props.setG2(data[Object.keys(data)[1]]);
-                    // props.setG3(data[Object.keys(data)[2]]);
-                    // props.setG4(data[Object.keys(data)[3]]);
-                    // props.setG5(data[Object.keys(data)[4]]);
-                    // props.setG6(data[Object.keys(data)[5]]);
-                    // props.setG7(data[Object.keys(data)[6]]);
-                    // props.setG8(data[Object.keys(data)[7]]);
-                    // props.setG9(data[Object.keys(data)[8]]);
-                    // props.setG10(data[Object.keys(data)[9]]);
-                    // props.setG11(data[Object.keys(data)[10]]);
+                    props.setG1(data[Object.keys(data)[0]]);
+                    props.setG2(data[Object.keys(data)[1]]);
+                    props.setG3(data[Object.keys(data)[2]]);
+                    props.setG4(data[Object.keys(data)[3]]);
+                    props.setG5(data[Object.keys(data)[4]]);
+                    props.setG6(data[Object.keys(data)[5]]);
+                    props.setG7(data[Object.keys(data)[6]]);
+                    props.setG8(data[Object.keys(data)[7]]);
+                    props.setG9(data[Object.keys(data)[8]]);
+                    props.setG10(data[Object.keys(data)[9]]);
+                    props.setG11(data[Object.keys(data)[10]]);
 
                     // console.log(props.g1);
 
@@ -129,7 +140,7 @@ function Selector(props) {
                 <Select
                     closeMenuOnSelect={false}
                     components={animatedComponents}
-                    // defaultValue={[options[4], options[5]]}
+                    // defaultValue={[options[0]]} 
                     placeholder="Select variables"
                     isMulti
                     options={options}
@@ -143,7 +154,7 @@ function Selector(props) {
                 <Select
                     closeMenuOnSelect={false}
                     components={animatedComponents}
-                    // defaultValue={[options[4], options[5]]}
+                    // defaultValue={[options[1]]}
                     placeholder="Select variables"
                     isMulti
                     options={options}
