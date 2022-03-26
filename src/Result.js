@@ -718,7 +718,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -730,7 +730,7 @@ function Result(
                     width: 2
                   },
                   name: g1.label,
-                  marker: { color: 'green', size: 3 },
+                  marker: { color: 'fdb833', size: 3 },
                   showlegend: false,
                 },
 
@@ -739,7 +739,7 @@ function Result(
                   y: g1y1Error,
                   mode: 'none',
                   fill: 'tonextx',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -748,7 +748,7 @@ function Result(
                   y: g1y2Error,
                   mode: 'none',
                   fill: 'tonextx',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -761,14 +761,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
+                  showlegend: true,
+                  name:'Mean',
                   marker: {
                     size: 1,
                   }
@@ -780,7 +781,7 @@ function Result(
                   y: g1.prediction,
                   type: 'scatter',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -791,9 +792,10 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g1.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
+                  // name: g1.label,
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name:"Prediction",
                 },
 
 
@@ -803,10 +805,11 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7
                   },
+                  showlegend:'user query' 
                 }
 
               ]}
@@ -856,8 +859,8 @@ function Result(
 
             />
 
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g1.pred_err} </small>
-            <small className='mb-1 p-0 secondary'>deviation from historical mean : {g1.mean_err} </small>
+            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g1.pred_err}% </small>
+            <small className='mb-1 p-0 secondary'>deviation from historical mean : {g1.mean_err}% </small>
           </div>
 
 
@@ -871,7 +874,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -883,7 +886,7 @@ function Result(
                     width: 2
                   },
                   name: g2.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -892,7 +895,7 @@ function Result(
                   y: g2y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -901,7 +904,7 @@ function Result(
                   y: g2y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -911,7 +914,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -923,9 +926,9 @@ function Result(
                     width: 2
                   },
                   name: g2.label,
-                  marker: { color: 'green', size: 4 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 4 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g2.date,
@@ -935,15 +938,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -954,7 +957,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1022,7 +1025,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1034,7 +1037,7 @@ function Result(
                     width: 2
                   },
                   name: g3.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -1043,7 +1046,7 @@ function Result(
                   y: g3y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1052,7 +1055,7 @@ function Result(
                   y: g3y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1062,7 +1065,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1074,9 +1077,9 @@ function Result(
                     width: 2
                   },
                   name: g3.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g3.date,
@@ -1086,15 +1089,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -1105,7 +1108,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1174,7 +1177,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1186,7 +1189,7 @@ function Result(
                     width: 2
                   },
                   name: g4.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -1195,7 +1198,7 @@ function Result(
                   y: g4y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1204,7 +1207,7 @@ function Result(
                   y: g4y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1214,7 +1217,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1226,9 +1229,9 @@ function Result(
                     width: 2
                   },
                   name: g4.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g4.date,
@@ -1238,15 +1241,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -1257,7 +1260,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1326,7 +1329,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1338,7 +1341,7 @@ function Result(
                     width: 2
                   },
                   name: g5.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -1347,7 +1350,7 @@ function Result(
                   y: g5y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1356,7 +1359,7 @@ function Result(
                   y: g5y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1366,7 +1369,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1378,9 +1381,9 @@ function Result(
                     width: 2
                   },
                   name: g5.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g5.date,
@@ -1390,15 +1393,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -1409,7 +1412,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1477,7 +1480,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1489,7 +1492,7 @@ function Result(
                     width: 2
                   },
                   name: g6.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -1498,7 +1501,7 @@ function Result(
                   y: g6y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1507,7 +1510,7 @@ function Result(
                   y: g6y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1517,7 +1520,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1529,9 +1532,9 @@ function Result(
                     width: 2
                   },
                   name: g6.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g6.date,
@@ -1541,15 +1544,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -1560,7 +1563,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1628,7 +1631,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1640,7 +1643,7 @@ function Result(
                     width: 2
                   },
                   name: g7.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -1649,7 +1652,7 @@ function Result(
                   y: g7y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1658,7 +1661,7 @@ function Result(
                   y: g7y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1668,7 +1671,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1680,9 +1683,9 @@ function Result(
                     width: 2
                   },
                   name: g7.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g7.date,
@@ -1692,15 +1695,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -1711,7 +1714,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1778,7 +1781,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1790,7 +1793,7 @@ function Result(
                     width: 2
                   },
                   name: g8.label,
-                  marker: { color: 'green', size: 3 },
+                  marker: { color: 'fdb833', size: 3 },
                   showlegend: false,
                 },
 
@@ -1799,7 +1802,7 @@ function Result(
                   y: g8y1Error, 
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1808,7 +1811,7 @@ function Result(
                   y: g8y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1818,7 +1821,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1830,9 +1833,9 @@ function Result(
                     width: 2
                   },
                   name: g8.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
-                },
+                  marker: { color: 'fdb833', size: 3 },
+                  showlegend: true,
+                  name: "prediction",                },
 
                 {
                   x: g8.date,
@@ -1842,15 +1845,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
-                  marker: {
+                  showlegend: true,
+                  name: "mean",                  marker: {
                     size: 1,
                   }
                 },
@@ -1861,7 +1864,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -1929,7 +1932,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1941,7 +1944,7 @@ function Result(
                     width: 2
                   },
                   name: g9.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -1950,7 +1953,7 @@ function Result(
                   y: g9y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1959,7 +1962,7 @@ function Result(
                   y: g9y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -1969,7 +1972,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -1980,9 +1983,10 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g9.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
+                  showlegend: true,
+                  name: "prediction",
+                  marker: { color: 'fdb833', size: 3 },
+
                 },
 
                 {
@@ -1993,14 +1997,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
+                  showlegend: true,
+                  name:'mean',
                   marker: {
                     size: 1,
                   }
@@ -2011,7 +2016,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -2080,7 +2085,7 @@ function Result(
                   mode: 'markers+lines',
 
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -2092,7 +2097,7 @@ function Result(
                     width: 2
                   },
                   name: g10.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -2101,7 +2106,7 @@ function Result(
                   y: g10y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -2110,7 +2115,7 @@ function Result(
                   y: g10y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -2120,7 +2125,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -2131,9 +2136,10 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g10.label,
-                  marker: { color: 'green', size: 3 },
-                  showlegend: false,
+                  showlegend: true,
+                  name: 'prediction',
+                  marker: { color: 'fdb833', size: 3 },
+
                 },
 
                 {
@@ -2144,14 +2150,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
+                  showlegend: true,
+                  name:'mean',
                   marker: {
                     size: 1,
                   }
@@ -2163,7 +2170,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
@@ -2241,7 +2248,7 @@ function Result(
                   type: 'scatter',
                   // mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
@@ -2253,7 +2260,7 @@ function Result(
                     width: 2
                   },
                   name: g11.label,
-                  marker: { color: 'green' },
+                  marker: { color: 'fdb833' },
                   showlegend: false,
                 },
 
@@ -2263,7 +2270,7 @@ function Result(
                   y: g11y1Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -2272,7 +2279,7 @@ function Result(
                   y: g11y2Error,
                   mode: 'none',
                   fill: 'tonexty',
-                  fillcolor: '#fdd85d',
+                  fillcolor: '#b2ff9e',
                   showlegend: false,
                 },
 
@@ -2284,14 +2291,15 @@ function Result(
                     width: 2
                   },
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 1,
                     width: 0,
                     type: 'constant',
                     value: 80,
                     visible: false,
                   },
-                  showlegend: false,
+                  showlegend: true,
+                  name:'mean',
                   marker: {
                     size: 1,
                   }
@@ -2306,7 +2314,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers+lines',
                   error_y: {
-                    color: '#fdd85d',
+                    color: '#b2ff9e',
                     thickness: 0,
                     width: 0,
                     type: 'constant',
@@ -2317,12 +2325,13 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g11.label,
                   marker: {
-                    color: 'green',
+                    color: 'fdb833',
                     size: 4
                   },
-                  showlegend: false,
+                  showlegend: true,
+                  name: 'prediction',
+                  
                 },
 
                 {
@@ -2332,7 +2341,7 @@ function Result(
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
-                    color: 'purple',
+                    color: 'd80032',
                     symbol: 'diamond',
                     size: 7,
                   },
