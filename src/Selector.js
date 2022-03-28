@@ -49,17 +49,9 @@ function Selector(props) {
 
         props.setLoaded(false);
 
-
-
-        // window.res_data = null;
-
-        // console.log(independentVariables);
-        // console.log(dependentVariables);
-       
-
-        console.log('from ', fromDate);
-        console.log('to ', toDate);
-        console.log('inputDate ', inputDate);
+        // console.log('from ', fromDate);
+        // console.log('to ', toDate);
+        // console.log('inputDate ', inputDate);
 
         let independentArray = [];
         let dependentArray = [];
@@ -75,11 +67,7 @@ function Selector(props) {
 
         const formdata = new FormData();
         formdata.append('Independent_var', independentArray);
-        console.log(independentArray);
-
         formdata.append('dependent_var', dependentArray);
-        console.log(dependentArray);
-
         formdata.append('date_from', fromDate);
         formdata.append('date_to', toDate);
         formdata.append('date_inp', inputDate);
@@ -102,7 +90,6 @@ function Selector(props) {
             .then(
                 data => {
                     console.log(data);
-                    // window.res_data = data;
 
                     props.setG1(data[Object.keys(data)[0]]);
                     props.setG2(data[Object.keys(data)[1]]);
@@ -116,15 +103,8 @@ function Selector(props) {
                     props.setG10(data[Object.keys(data)[9]]);
                     props.setG11(data[Object.keys(data)[10]]);
 
-                    // console.log(props.g1);
-
                     props.setLoaded(true);
 
-                    // console.log('window.res_data');
-                    // console.log(window.res_data);
-
-                    // props.setData(data);
-                    // console.log('props data',props.data);
                 }
             )
 

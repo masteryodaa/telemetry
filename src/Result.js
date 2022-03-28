@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import Plot from 'react-plotly.js';
-// import Independent from './Independent';
 import Sidenav from './Sidenav';
-// import Slide from './Slide';
-// import json from './data.json'
+
 
 function Result(
   { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11,
@@ -26,75 +24,29 @@ function Result(
   }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11])
 
 
-  // let newData = window.res_data;
 
-  // console.log(newData);
-
-  // let g1 = newData[Object.keys(newData)[0]];
-  // let g2 = newData[Object.keys(newData)[1]];
-  // let g3 = newData[Object.keys(newData)[2]];
-  // let g4 = newData[Object.keys(newData)[3]];
-  // let g5 = newData[Object.keys(newData)[4]];
-  // let g6 = newData[Object.keys(newData)[5]];
-  // let g7 = newData[Object.keys(newData)[6]];
-  // let g8 = newData[Object.keys(newData)[7]];
-  // let g9 = newData[Object.keys(newData)[8]];
-  // let g10 = newData[Object.keys(newData)[9]];
-  // let g11 = newData[Object.keys(newData)[10]];
 
   console.log(g1);
   console.log(g1.date);
   console.log(g1.prediction);
 
-  let g1date = [];
 
-
-  // g1.date.forEach(function (element) {
-  //   g1date.push(
-  //     new Date()
-  //   );
-  // });
-
-  let g1x1 = [];
-  let g1x1Error = [];
   let g1y1Error = [];
 
 
   for (let i = 0; i < g1.date.length; i++) {
-    g1x1.push(g1.date[i] + g1.error);
     g1y1Error.push(g1.prediction[i] + g1.error);
   }
 
-  // g1.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
 
-  //   let a = new Date(y * 1000);
 
-  //   g1x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g1x2 = [];
-  let g1x2Error = [];
   let g1y2Error = [];
 
   for (let i = 0; i < g1.date.length; i++) {
-    g1x2.push(g1.date[i] - g1.error);
     g1y2Error.push(g1.prediction[i] - g1.error);
   }
 
-  // g1.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g1x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
+ 
 
   let g1mean = [];
 
@@ -103,58 +55,20 @@ function Result(
   }
 
 
-  let g2date = [];
 
-  // g2.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g2date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g2x1 = [];
-  let g2x1Error = [];
   let g2y1Error = [];
 
   for (let i = 0; i < g2.date.length; i++) {
-    g2x1.push(g2.date[i] + g2.error);
     g2y1Error.push(g2.prediction[i] + g2.error);
   }
 
-  // g2.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
 
-  //   let a = new Date(y * 1000);
-
-  //   g2x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g2x2 = [];
-  let g2x2Error = [];
   let g2y2Error = [];
 
   for (let i = 0; i < g2.date.length; i++) {
-    g2x2.push(g2.date[i] - g2.error);
     g2y2Error.push(g2.prediction[i] - g2.error);
   }
 
-  // g2.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g2x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g2mean = [];
 
@@ -162,177 +76,70 @@ function Result(
     g2mean.push(g2.mean);
   }
 
-  let g3date = [];
 
-  // g3.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+  
 
-  //   let a = new Date(y * 1000);
-
-  //   g3date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g3x1 = [];
-  let g3x1Error = [];
   let g3y1Error = [];
 
   for (let i = 0; i < g3.date.length; i++) {
-    g3x1.push(g3.date[i] + g3.error);
     g3y1Error.push(g3.prediction[i] + g3.error);
   }
 
-  // g3.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+  
 
-  //   let a = new Date(y * 1000);
 
-  //   g3x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g3x2 = [];
-  let g3x2Error = [];
   let g3y2Error = [];
 
   for (let i = 0; i < g3.date.length; i++) {
-    g3x2.push(g3.date[i] - g3.error);
     g3y2Error.push(g3.prediction[i] - g3.error);
   }
 
-  // g3.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g3x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
+  
   let g3mean = [];
 
   for (let i = 0; i < g3.date.length; i++) {
     g3mean.push(g3.mean);
   }
 
+ 
 
-  let g4date = [];
-
-  // g4.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g4date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g4x1 = [];
-  let g4x1Error = [];
   let g4y1Error = [];
 
   for (let i = 0; i < g4.date.length; i++) {
-    g4x1.push(g4.date[i] + g4.error);
     g4y1Error.push(g4.prediction[i] + g4.error);
   }
 
-  // g4.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+ 
 
-  //   let a = new Date(y * 1000);
-
-  //   g4x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g4x2 = [];
-  let g4x2Error = [];
   let g4y2Error = [];
 
   for (let i = 0; i < g4.date.length; i++) {
-    g4x2.push(g4.date[i] - g4.error);
     g4y2Error.push(g4.prediction[i] - g4.error);
   }
 
-  // g4.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g4x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
+ 
   let g4mean = [];
 
   for (let i = 0; i < g4.date.length; i++) {
     g4mean.push(g4.mean);
   }
 
-  let g5date = [];
 
-  // g5.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
 
-  //   let a = new Date(y * 1000);
-
-  //   g5date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g5x1 = [];
-  let g5x1Error = [];
   let g5y1Error = [];
 
   for (let i = 0; i < g5.date.length; i++) {
-    g5x1.push(g5.date[i] + g5.error);
     g5y1Error.push(g5.prediction[i] + g5.error);
   }
 
-  // g5.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+ 
 
-  //   let a = new Date(y * 1000);
 
-  //   g5x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g5x2 = [];
-  let g5x2Error = [];
   let g5y2Error = [];
 
   for (let i = 0; i < g5.date.length; i++) {
-    g5x2.push(g5.date[i] - g5.error);
     g5y2Error.push(g5.prediction[i] - g3.error);
   }
-
-  // g5.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g5x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g5mean = [];
 
@@ -340,58 +147,21 @@ function Result(
     g5mean.push(g5.mean);
   }
 
-  let g6date = [];
+  
 
-  // g6.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g6date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g6x1 = [];
-  let g6x1Error = [];
   let g6y1Error = [];
 
   for (let i = 0; i < g6.date.length; i++) {
-    g6x1.push(g6.date[i] + g6.error);
     g6y1Error.push(g6.prediction[i] + g6.error);
   }
 
-  // g6.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
 
-  //   let a = new Date(y * 1000);
-
-  //   g6x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g6x2 = [];
-  let g6x2Error = [];
   let g6y2Error = [];
 
   for (let i = 0; i < g6.date.length; i++) {
-    g6x2.push(g6.date[i] - g6.error);
     g6y2Error.push(g6.prediction[i] - g6.error);
   }
 
-  // g6.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g6x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g6mean = [];
 
@@ -399,117 +169,46 @@ function Result(
     g6mean.push(g6.mean);
   }
 
-  let g7date = [];
 
-  // g7.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+ 
 
-  //   let a = new Date(y * 1000);
-
-  //   g7date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g7x1 = [];
-  let g7x1Error = [];
   let g7y1Error = [];
 
   for (let i = 0; i < g7.date.length; i++) {
-    g7x1.push(g7.date[i] + g7.error);
     g7y1Error.push(g7.prediction[i] + g7.error);
   }
 
-  // g7.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+  
 
-  //   let a = new Date(y * 1000);
-
-  //   g7x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g7x2 = [];
-  let g7x2Error = [];
+  
   let g7y2Error = [];
 
   for (let i = 0; i < g7.date.length; i++) {
-    g7x2.push(g7.date[i] - g7.error);
     g7y2Error.push(g7.prediction[i] - g7.error);
   }
 
-  // g7.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g7x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
+  
   let g7mean = [];
 
   for (let i = 0; i < g7.date.length; i++) {
     g7mean.push(g7.mean);
   }
+ 
 
-  let g8date = [];
-
-  // g8.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g8date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g8x1 = [];
-  let g8x1Error = [];
   let g8y1Error = [];
 
   for (let i = 0; i < g8.date.length; i++) {
-    g8x1.push(g8.date[i] + g8.error);
     g8y1Error.push(g8.prediction[i] + g8.error);
   }
 
-  // g8.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+ 
 
-  //   let a = new Date(y * 1000);
-
-  //   g8x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g8x2 = [];
-  let g8x2Error = [];
   let g8y2Error = [];
 
   for (let i = 0; i < g8.date.length; i++) {
-    g8x2.push(g8.date[i] - g8.error);
     g8y2Error.push(g8.prediction[i] - g8.error);
   }
 
-  // g8.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g8x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g8mean = [];
 
@@ -517,117 +216,44 @@ function Result(
     g8mean.push(g8.mean);
   }
 
-  let g9date = [];
+  
 
-  // g9.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g9date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g9x1 = [];
-  let g9x1Error = [];
   let g9y1Error = [];
 
   for (let i = 0; i < g9.date.length; i++) {
-    g9x1.push(g9.date[i] + g9.error);
     g9y1Error.push(g9.prediction[i] + g9.error);
   }
 
-  // g9.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+ 
 
-  //   let a = new Date(y * 1000);
-
-  //   g9x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g9x2 = [];
-  let g9x2Error = [];
   let g9y2Error = [];
 
   for (let i = 0; i < g9.date.length; i++) {
-    g9x2.push(g9.date[i] - g9.error);
     g9y2Error.push(g9.prediction[i] - g9.error);
   }
-
-  // g9.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g9x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g9mean = [];
 
   for (let i = 0; i < g9.date.length; i++) {
     g9mean.push(g9.mean);
   }
+ 
 
-  let g10date = [];
 
-  // g10.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g10date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g10x1 = [];
-  let g10x1Error = [];
   let g10y1Error = [];
 
   for (let i = 0; i < g10.date.length; i++) {
-    g10x1.push(g10.date[i] + g10.error);
     g10y1Error.push(g10.prediction[i] + g10.error);
   }
 
-  // g10.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
+  
 
-  //   let a = new Date(y * 1000);
 
-  //   g10x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g10x2 = [];
-  let g10x2Error = [];
   let g10y2Error = [];
 
   for (let i = 0; i < g10.date.length; i++) {
-    g10x2.push(g10.date[i] - g10.error);
     g10y2Error.push(g10.prediction[i] - g10.error);
   }
-
-  // g10.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g10x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g10mean = [];
 
@@ -635,58 +261,22 @@ function Result(
     g10mean.push(g10.mean);
   }
 
-  let g11date = [];
 
-  // g11.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g11date.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
-
-  let g11x1 = [];
-  let g11x1Error = [];
   let g11y1Error = [];
 
   for (let i = 0; i < g11.date.length; i++) {
-    g11x1.push(g11.date[i] + g11.error);
     g11y1Error.push(g11.prediction[i] + g11.error);
   }
 
-  // g11.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
 
-  //   let a = new Date(y * 1000);
 
-  //   g11x1Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
 
-  // });
-
-  let g11x2 = [];
-  let g11x2Error = [];
   let g11y2Error = [];
 
   for (let i = 0; i < g11.date.length; i++) {
-    g11x2.push(g11.date[i] - g11.error);
     g11y2Error.push(g11.prediction[i] - g11.error);
   }
 
-  // g11.date.forEach(function (element) {
-  //   let z = "" + element;
-  //   let x = z.substring(0, 10);
-  //   let y = parseInt(x);
-
-  //   let a = new Date(y * 1000);
-
-  //   g11x2Error.push(a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
-
-  // });
 
   let g11mean = [];
 
@@ -753,33 +343,34 @@ function Result(
                 },
 
 
-                {
-                  x: g1.date,
-                  y: g1mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name:'Mean',
-                  marker: {
-                    size: 1,
-                  }
-                },
+                // {
+                //   x: g1.date,
+                //   y: g1mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name:'Mean',
+                //   marker: {
+                //     size: 1,
+                //   }
+                // },
 
-          
+
                 {
                   x: g1.date,
                   y: g1.prediction,
                   type: 'scatter',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -792,16 +383,15 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  // name: g1.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name:"Prediction",
+                  name: "Prediction",
                 },
 
 
                 {
                   x: [g1.qry_date],
-                  y:[ g1.user_qry],
+                  y: [g1.user_qry],
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
@@ -809,7 +399,7 @@ function Result(
                     symbol: 'diamond',
                     size: 7
                   },
-                  showlegend:'user query' 
+                  showlegend: 'user query'
                 }
 
               ]}
@@ -912,7 +502,7 @@ function Result(
                   x: g2.date,
                   y: g2.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -925,31 +515,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g2.label,
-                  marker: { color: 'fdb833', size: 4 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g2.date,
-                  y: g2mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g2.date,
+                //   y: g2mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean",                  marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g2.qry_date],
@@ -1063,7 +653,7 @@ function Result(
                   x: g3.date,
                   y: g3.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1076,31 +666,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g3.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g3.date,
-                  y: g3mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g3.date,
+                //   y: g3mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean", marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g3.qry_date],
@@ -1215,7 +805,7 @@ function Result(
                   x: g4.date,
                   y: g4.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1228,31 +818,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g4.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g4.date,
-                  y: g4mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g4.date,
+                //   y: g4mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean", marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g4.qry_date],
@@ -1367,7 +957,7 @@ function Result(
                   x: g5.date,
                   y: g5.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1380,31 +970,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g5.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g5.date,
-                  y: g5mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g5.date,
+                //   y: g5mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean", marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g5.qry_date],
@@ -1518,7 +1108,7 @@ function Result(
                   x: g6.date,
                   y: g6.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1531,31 +1121,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g6.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4},
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g6.date,
-                  y: g6mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g6.date,
+                //   y: g6mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean", marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g6.qry_date],
@@ -1669,7 +1259,7 @@ function Result(
                   x: g7.date,
                   y: g7.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1682,31 +1272,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g7.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g7.date,
-                  y: g7mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g7.date,
+                //   y: g7mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean", marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g7.qry_date],
@@ -1799,7 +1389,7 @@ function Result(
 
                 {
                   x: g8.date,
-                  y: g8y1Error, 
+                  y: g8y1Error,
                   mode: 'none',
                   fill: 'tonexty',
                   fillcolor: '#b2ff9e',
@@ -1819,7 +1409,7 @@ function Result(
                   x: g8.date,
                   y: g8.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1832,31 +1422,31 @@ function Result(
                     color: 'blue',
                     width: 2
                   },
-                  name: g8.label,
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
                   showlegend: true,
-                  name: "prediction",                },
-
-                {
-                  x: g8.date,
-                  y: g8mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name: "mean",                  marker: {
-                    size: 1,
-                  }
+                  name: "prediction",
                 },
+
+                // {
+                //   x: g8.date,
+                //   y: g8mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: "mean", marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g8.qry_date],
@@ -1970,7 +1560,7 @@ function Result(
                   x: g9.date,
                   y: g9.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -1985,31 +1575,32 @@ function Result(
                   },
                   showlegend: true,
                   name: "prediction",
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
 
                 },
 
-                {
-                  x: g9.date,
-                  y: g9mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name:'mean',
-                  marker: {
-                    size: 1,
-                  }
-                },
+                // {
+                //   x: g9.date,
+                //   y: g9mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: 'mean',
+                //   marker: {
+                //     size: 1,
+                //   }
+                // },
+
                 {
                   x: [g9.qry_date],
                   y: [g9.user_qry],
@@ -2123,7 +1714,7 @@ function Result(
                   x: g10.date,
                   y: g10.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 1,
@@ -2138,31 +1729,31 @@ function Result(
                   },
                   showlegend: true,
                   name: 'prediction',
-                  marker: { color: 'fdb833', size: 3 },
+                  marker: { color: 'blue', size: 4 },
 
                 },
 
-                {
-                  x: g10.date,
-                  y: g10mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name:'mean',
-                  marker: {
-                    size: 1,
-                  }
-                },
+                // {
+                //   x: g10.date,
+                //   y: g10mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: 'mean',
+                //   marker: {
+                //     size: 1,
+                //   }
+                // },
 
                 {
                   x: [g10.qry_date],
@@ -2241,7 +1832,7 @@ function Result(
 
               data={[
 
-                
+
                 {
                   x: g11.date,
                   y: g11.prediction,
@@ -2283,36 +1874,36 @@ function Result(
                   showlegend: false,
                 },
 
-                {
-                  x: g11.date,
-                  y: g11mean,
-                  line: {
-                    color: 'black',
-                    width: 2
-                  },
-                  error_y: {
-                    color: '#b2ff9e',
-                    thickness: 1,
-                    width: 0,
-                    type: 'constant',
-                    value: 80,
-                    visible: false,
-                  },
-                  showlegend: true,
-                  name:'mean',
-                  marker: {
-                    size: 1,
-                  }
-                },
+                // {
+                //   x: g11.date,
+                //   y: g11mean,
+                //   line: {
+                //     color: 'black',
+                //     width: 2
+                //   },
+                //   error_y: {
+                //     color: '#b2ff9e',
+                //     thickness: 1,
+                //     width: 0,
+                //     type: 'constant',
+                //     value: 80,
+                //     visible: false,
+                //   },
+                //   showlegend: true,
+                //   name: 'mean',
+                //   marker: {
+                //     size: 1,
+                //   }
+                // },
 
-                
 
-            
+
+
                 {
                   x: g11.date,
                   y: g11.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
                   error_y: {
                     color: '#b2ff9e',
                     thickness: 0,
@@ -2326,18 +1917,18 @@ function Result(
                     width: 2
                   },
                   marker: {
-                    color: 'fdb833',
+                    color: 'blue',
                     size: 4
                   },
                   showlegend: true,
                   name: 'prediction',
-                  
+
                 },
 
                 {
-                  x:[g11.qry_date],
+                  x: [g11.qry_date],
                   y: [g11.user_qry],
-                  
+
                   type: 'scatter',
                   mode: 'markers',
                   marker: {
@@ -2348,7 +1939,7 @@ function Result(
                   name: 'user query',
                 },
 
-                
+
 
               ]}
 
@@ -2397,7 +1988,7 @@ function Result(
 
             />
             <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g11.pred_err}% </small>
-            <small className='mb-1 p-0 secondary'>deviation from historical mean :  {g11.mean_err}% </small> 
+            <small className='mb-1 p-0 secondary'>deviation from historical mean :  {g11.mean_err}% </small>
           </div>
 
           <p>Dependent Graph</p>
