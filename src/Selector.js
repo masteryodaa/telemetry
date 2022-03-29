@@ -149,12 +149,12 @@ function Selector(props) {
             </div>
 
             <div className="variables my-4">
-                <p className='m-0 mb-2'>Dependent variables</p>
+                <p className='m-0 mb-2'>Dependent variable</p>
                 <Select
                     closeMenuOnSelect={false}
                     components={animatedComponents}
                     // defaultValue={[options[1]]}
-                    placeholder="Select variables"
+                    placeholder="Select variable"
                     isMulti
                     options={options}
                     noOptionsMessage={() => "No options"}
