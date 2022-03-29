@@ -48,6 +48,7 @@ function Selector(props) {
     const sendData = () => {
 
         props.setLoaded(false);
+        props.setLoaded(false);
 
         // console.log('from ', fromDate);
         // console.log('to ', toDate);
