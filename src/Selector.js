@@ -135,6 +135,8 @@ function Selector(props) {
             <div className="variables">
                 <p className='m-0 mb-2'>Independent variables</p>
                 <Select
+                    className="basic-single"
+                    classNamePrefix="select"
                     closeMenuOnSelect={false}
                     components={animatedComponents}
                     // defaultValue={[options[0]]} 
