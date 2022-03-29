@@ -82,8 +82,16 @@ function Selector(props) {
 
             .then(
                 (response) => {
-                    console.log(response);
-                    return response.json();
+
+                    if (response.status === 200) {
+                        props.setFailed(false);
+                        return response.json();
+                    }
+                    else {
+                        console.log('error from server');
+                        props.setFailed(true);
+                    }
+
                 }
             )
 
@@ -105,6 +113,14 @@ function Selector(props) {
 
                     props.setLoaded(true);
 
+                }
+            )
+
+            .catch(
+                error => {
+                    console.log('try again');
+                    props.setFailed(true);
+                    console.log(props.failed);
                 }
             )
 

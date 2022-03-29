@@ -4,10 +4,11 @@ import Navbar from './Navbar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Result from './Result';
 import Loading from './Loading';
+import Failed from './Failed';
 
 function App() {
 
-  
+
 
   const [g1, setG1] = useState([]);
   const [g2, setG2] = useState([]);
@@ -25,6 +26,7 @@ function App() {
 
   const [loaded, setLoaded] = useState(false);
 
+  const [failed, setFailed] = useState(false);
 
 
   return (
@@ -35,7 +37,7 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Body loaded={loaded} setLoaded={setLoaded}
+          <Route path="/" element={<Body loaded={loaded} setLoaded={setLoaded} setFailed={setFailed} failed={failed}
 
             g1={g1} setG1={setG1}
             g2={g2} setG2={setG2}
@@ -50,43 +52,54 @@ function App() {
             g11={g11} setG11={setG11}
 
           />}></Route>
+
           {
-            loaded ?
-              <Route path="/result" element={<Result
+            failed ? <Route path="/result" element={<Failed />}></Route> :
 
-                g1={g1}
-                g2={g2}
-                g3={g3}
-                g4={g4}
-                g5={g5}
-                g6={g6}
-                g7={g7}
-                g8={g8}
-                g9={g9}
-                g10={g10}
-                g11={g11}
 
-                setG1={setG1}
-                setG2={setG2}
-                setG3={setG3}
-                setG4={setG4}
-                setG5={setG5}
-                setG6={setG6}
-                setG7={setG7}
-                setG8={setG8}
-                setG9={setG9}
-                setG10={setG10}
-                setG11={setG11}
+              loaded ?
+                <Route path="/result" element={
+                  <Result
 
-              />}></Route>
-              :
-              <Route path="/result" element={<Loading />}></Route>
+                    g1={g1}
+                    g2={g2}
+                    g3={g3}
+                    g4={g4}
+                    g5={g5}
+                    g6={g6}
+                    g7={g7}
+                    g8={g8}
+                    g9={g9}
+                    g10={g10}
+                    g11={g11}
+
+                    setG1={setG1}
+                    setG2={setG2}
+                    setG3={setG3}
+                    setG4={setG4}
+                    setG5={setG5}
+                    setG6={setG6}
+                    setG7={setG7}
+                    setG8={setG8}
+                    setG9={setG9}
+                    setG10={setG10}
+                    setG11={setG11}
+
+                  />}></Route>
+                :
+                <Route path="/result" element={<Loading />}></Route>
+
           }
+
+
+
+
+
         </Routes>
 
       </Router>
 
-    </div>
+    </div >
   );
 }
 

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Selector from './Selector';
 import svg from './Spreadsheets-amico.svg';
 
@@ -17,6 +16,9 @@ function Body(props) {
             <div className="body-right">
 
                 <Selector setLoaded={props.setLoaded} 
+
+                    setFailed={props.setFailed}
+                    failed={props.failed}
                 
                     g1={props.g1} setG1={props.setG1}
                     g2={props.g2} setG2={props.setG2}

@@ -295,7 +295,7 @@ function Result(
 
       <div className="graph_container">
 
-        <div className="graph_left">
+        <div className="graph_left ">
 
           <div className="graph graph1 leftgraph" id='graph1'>
 
@@ -316,7 +316,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g1.label,
@@ -380,10 +380,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "Prediction",
                 },
@@ -399,7 +399,8 @@ function Result(
                     symbol: 'diamond',
                     size: 7
                   },
-                  showlegend: 'user query'
+                  showlegend: true,
+                  name:'user query'
                 }
 
               ]}
@@ -472,7 +473,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g2.label,
@@ -512,10 +513,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -551,10 +552,11 @@ function Result(
                     symbol: 'diamond',
                     size: 7,
                   },
+                  showlegend:true,
                   name: 'user query',
                 },
 
-              ]}
+              ]}  
 
               layout={{
 
@@ -623,7 +625,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g3.label,
@@ -663,10 +665,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -775,7 +777,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g4.label,
@@ -815,10 +817,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -927,7 +929,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g5.label,
@@ -967,10 +969,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -1078,7 +1080,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g6.label,
@@ -1118,10 +1120,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4},
+                  marker: { color: '#143601', size: 4},
                   showlegend: true,
                   name: "prediction",
                 },
@@ -1229,7 +1231,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g7.label,
@@ -1269,10 +1271,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -1379,7 +1381,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g8.label,
@@ -1419,10 +1421,10 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -1530,7 +1532,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g9.label,
@@ -1570,12 +1572,12 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   showlegend: true,
                   name: "prediction",
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
 
                 },
 
@@ -1684,7 +1686,7 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g10.label,
@@ -1724,12 +1726,12 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   showlegend: true,
                   name: 'prediction',
-                  marker: { color: 'blue', size: 4 },
+                  marker: { color: '#143601', size: 4 },
 
                 },
 
@@ -1847,7 +1849,7 @@ function Result(
                     visible: false,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   name: g11.label,
@@ -1913,11 +1915,11 @@ function Result(
                     visible: true,
                   },
                   line: {
-                    color: 'blue',
+                    color: '#143601',
                     width: 2
                   },
                   marker: {
-                    color: 'blue',
+                    color: '#143601',
                     size: 4
                   },
                   showlegend: true,
