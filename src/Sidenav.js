@@ -29,7 +29,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-2' size={25} />
+                    <VscGraphLine className='sidenavIcon me-2' size={22} />
                     <p className='sidenavText'>{g1}</p>
                 </div>
             </a>
@@ -55,7 +55,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g2}</p>
                 </div>
             </a>
@@ -83,7 +83,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
 
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g3}</p>
                 </div>
             </a>
@@ -111,7 +111,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g4}</p>
                 </div>
             </a>
@@ -137,7 +137,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g5}</p>
                 </div>
             </a>
@@ -163,7 +163,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g6}</p>
                 </div>
             </a>
@@ -190,7 +190,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g7}</p>
                 </div>
             </a>
@@ -216,7 +216,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon  me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon  me-1' size={22} />
                     <p className='sidenavText'>{g8}</p>
                 </div>
             </a>
@@ -242,7 +242,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                <VscGraphLine className='sidenavIcon me-1' size={25} />
+                <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g9}</p>
                 </div>
             </a>
@@ -268,7 +268,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                    <VscGraphLine className='sidenavIcon me-1' size={25} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g10}</p>
                 </div>
             </a>
