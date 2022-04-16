@@ -312,14 +312,90 @@ a {
 
 ul
 {
-    padding: 0;
+  padding: 0;
 }
 
-.sideContainer{
+.sidenavText{
+  display: none;
+}
+
+
+.sideContainer a{
+  position: absolute; /* Position them relative to the browser window */
+  left: -10px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  /* width: 100px; Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 12px; 
+  /* color: white; White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  /* margin-bottom: 100px; */
+  /* margin-top: 100px; */
+}
+
+.sideContainer a:hover{
+  left: 0; /* On mouse-over, make the elements appear as they should */
+
+}
+
+#a1{
+  top:100px;
+}
+
+#a2{
+  top:150px;
+}
+
+#a3{
+  top: 200px;
+}
+
+#a4{
+  top: 250px;
+}
+
+#a5{
+  top:300px;
+}
+
+#a6{
+  top:350px;
+}
+
+#a7{
+  top:400px
+}
+
+#a8{
+  top:450px;
+}
+
+#a9{
+  top:500px;
+}
+
+#a10{
+  top:550px
+}
+
+.sideContainer a:hover .sidenavText{
+  display: block;
+  transition: 0.3s;
+}
+
+.innerSidenav{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: unset;
+  background-color:#bde0fe ;
+  border-radius: 30px;
+  padding: 5px 10px;
 }
+
+
+
+
 
 .sidebar_nav
 {
@@ -352,7 +428,7 @@ ul
     color: #fff;
     text-align: center;
     padding: 10px !important;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
  
 }
 
@@ -361,6 +437,9 @@ ul
     color: #000;
 }
 
+/* .sidenavText{
+  font: 2px;
+} */
 
 #content_container 
 {

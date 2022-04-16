@@ -46,7 +46,7 @@ function Result(
     g1y2Error.push(g1.prediction[i] - g1.error);
   }
 
- 
+
 
   let g1mean = [];
 
@@ -77,7 +77,7 @@ function Result(
   }
 
 
-  
+
 
   let g3y1Error = [];
 
@@ -85,7 +85,7 @@ function Result(
     g3y1Error.push(g3.prediction[i] + g3.error);
   }
 
-  
+
 
 
   let g3y2Error = [];
@@ -94,14 +94,14 @@ function Result(
     g3y2Error.push(g3.prediction[i] - g3.error);
   }
 
-  
+
   let g3mean = [];
 
   for (let i = 0; i < g3.date.length; i++) {
     g3mean.push(g3.mean);
   }
 
- 
+
 
   let g4y1Error = [];
 
@@ -109,7 +109,7 @@ function Result(
     g4y1Error.push(g4.prediction[i] + g4.error);
   }
 
- 
+
 
   let g4y2Error = [];
 
@@ -117,7 +117,7 @@ function Result(
     g4y2Error.push(g4.prediction[i] - g4.error);
   }
 
- 
+
   let g4mean = [];
 
   for (let i = 0; i < g4.date.length; i++) {
@@ -132,7 +132,7 @@ function Result(
     g5y1Error.push(g5.prediction[i] + g5.error);
   }
 
- 
+
 
 
   let g5y2Error = [];
@@ -147,7 +147,7 @@ function Result(
     g5mean.push(g5.mean);
   }
 
-  
+
 
   let g6y1Error = [];
 
@@ -170,7 +170,7 @@ function Result(
   }
 
 
- 
+
 
   let g7y1Error = [];
 
@@ -178,22 +178,22 @@ function Result(
     g7y1Error.push(g7.prediction[i] + g7.error);
   }
 
-  
 
-  
+
+
   let g7y2Error = [];
 
   for (let i = 0; i < g7.date.length; i++) {
     g7y2Error.push(g7.prediction[i] - g7.error);
   }
 
-  
+
   let g7mean = [];
 
   for (let i = 0; i < g7.date.length; i++) {
     g7mean.push(g7.mean);
   }
- 
+
 
   let g8y1Error = [];
 
@@ -201,7 +201,7 @@ function Result(
     g8y1Error.push(g8.prediction[i] + g8.error);
   }
 
- 
+
 
   let g8y2Error = [];
 
@@ -216,7 +216,7 @@ function Result(
     g8mean.push(g8.mean);
   }
 
-  
+
 
   let g9y1Error = [];
 
@@ -224,7 +224,7 @@ function Result(
     g9y1Error.push(g9.prediction[i] + g9.error);
   }
 
- 
+
 
   let g9y2Error = [];
 
@@ -237,7 +237,7 @@ function Result(
   for (let i = 0; i < g9.date.length; i++) {
     g9mean.push(g9.mean);
   }
- 
+
 
 
   let g10y1Error = [];
@@ -246,7 +246,7 @@ function Result(
     g10y1Error.push(g10.prediction[i] + g10.error);
   }
 
-  
+
 
 
   let g10y2Error = [];
@@ -288,7 +288,6 @@ function Result(
 
   return (
     <div className='container mt-5'>
-      <Sidenav />
 
       <p className='text-center mb-5 resTitle'>Prediction dashboard</p>
 
@@ -400,7 +399,7 @@ function Result(
                     size: 7
                   },
                   showlegend: true,
-                  name:'user query'
+                  name: 'user query'
                 }
 
               ]}
@@ -552,11 +551,11 @@ function Result(
                     symbol: 'diamond',
                     size: 7,
                   },
-                  showlegend:true,
+                  showlegend: true,
                   name: 'user query',
                 },
 
-              ]}  
+              ]}
 
               layout={{
 
@@ -1123,7 +1122,7 @@ function Result(
                     color: '#143601',
                     width: 2
                   },
-                  marker: { color: '#143601', size: 4},
+                  marker: { color: '#143601', size: 4 },
                   showlegend: true,
                   name: "prediction",
                 },
@@ -1998,6 +1997,20 @@ function Result(
         </div>
 
       </div>
+
+
+      <Sidenav
+        g1={g1.label}
+        g2={g2.label}
+        g3={g3.label}
+        g4={g4.label}
+        g5={g5.label}
+        g6={g6.label}
+        g7={g7.label}
+        g8={g8.label}
+        g9={g9.label}
+        g10={g10.label}
+      />
 
 
     </div>
