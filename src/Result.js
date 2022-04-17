@@ -405,10 +405,13 @@ function Result(
               ]}
 
               layout={{
+                
                 autosize: false,
                 width: 550,
                 height: 350,
                 title: g1.label + " Plot",
+                // paper_bgcolor: '#f9f7f3',
+                // plot_bgcolor: '#f9f7f3',
                 xaxis: {
                   title: 'Time',
                   titlefont: {
@@ -436,6 +439,9 @@ function Result(
                     color: '#7f7f7f'
                   }
                 },
+               
+
+              
                 margin: {
                   l: 50,
                   r: 50,
@@ -443,6 +449,7 @@ function Result(
                   t: 100,
                   pad: 5
                 },
+
 
               }}
 
@@ -1831,6 +1838,11 @@ function Result(
           <div className="graph graph11" id='graph11'>
             <Plot
 
+            style={{
+              'borderRadius':'50px',
+              'borderColor':'black'
+            }}
+
               data={[
 
 
@@ -1945,6 +1957,7 @@ function Result(
               ]}
 
               layout={{
+
                 autosize: false,
                 width: 550,
                 height: 350,
