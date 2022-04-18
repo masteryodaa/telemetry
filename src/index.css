@@ -167,11 +167,15 @@ header {
   cursor: pointer;
 }
 
-.close-btn{
-  position: absolute;
-  right: 5px;
-  top: 5px;
+.addBtn{
+  background-color: #184e77;
 }
+
+.modal-body .container{
+  width:max-content;
+}
+
+.modal-body .container 
 
 .telemetry {
   text-shadow: 0px 0px 3px #e0e0e0;

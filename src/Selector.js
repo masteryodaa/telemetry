@@ -3,7 +3,8 @@ import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 import DatePicker from 'react-date-picker';
 import { Link } from 'react-router-dom';
-import TableModal from './TableModal';
+
+import AddDeleteTableRows from './Row';
 
 const animatedComponents = makeAnimated();
 
@@ -220,7 +221,9 @@ function Selector(props) {
 
                             {/* modal body */}
 
-                            <TableModal />
+                            {/* <TableModal /> */}
+                            {/* <Row/> */}
+                            <AddDeleteTableRows/>
 
                             <div className='process mt-3'>
                                 <div class="configuredBtn m-0 mb-0" data-bs-dismiss="modal">Close</div>
