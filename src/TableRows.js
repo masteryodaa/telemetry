@@ -10,12 +10,14 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options, dependent
 
 
         rowsData.map((data, index) => {
-            const { vesselName, dependent, independent } = data;
+            const { alertName,
+                //  dependent, independent
+                 } = data;
             return (
 
                 <tr key={index}>
                     <td>
-                        <input type="text" value={vesselName} onChange={(evnt) => (handleChange(index, evnt))} name="vesselName" className="form-control" />
+                        <input type="text" value={alertName} onChange={(evnt) => (handleChange(index, evnt))} name="alertName" className="form-control" />
                     </td>
 
                     {/* <td><input type="text" value={independentVariables}  onChange={(evnt)=>(handleChange(index, evnt))} name="independent" className="form-control"/> </td> */}

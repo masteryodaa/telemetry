@@ -34,7 +34,7 @@ function Selector(props) {
     const [inputDate, setInputDate] = useState(new Date('2021/05/05'));
 
     const changeFromDate = (date) => {
-        setFromDate(date)
+        setFromDate(date) 
     }
 
     const changeToDate = (date) => {
@@ -221,8 +221,6 @@ function Selector(props) {
 
                             {/* modal body */}
 
-                            {/* <TableModal /> */}
-                            {/* <Row/> */}
                             <AddDeleteTableRows/>
 
                             <div className='process mt-3'>

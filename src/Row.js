@@ -24,7 +24,7 @@ function AddDeleteTableRows(){
     const [frequency,setFrequency] = useState(0);
 
     const [rowsData, setRowsData] = useState([{
-        vesselName:'',
+        alertName:'',
         dependent:'',
         independent:'',
         frequency:''  
@@ -33,7 +33,7 @@ function AddDeleteTableRows(){
     const addTableRows = ()=>{
   
         const rowsInput={
-            vesselName:'',
+            alertName:'',
             dependent:'',
             independent:'',
             frequency:''  
@@ -65,7 +65,7 @@ function AddDeleteTableRows(){
                 <table className="table">
                     <thead>
                       <tr>
-                          <th>Vessel Name</th>
+                          <th>Alert Name</th>
                           <th>Independent variable</th>
                           <th>Dependent variable</th>
                           <th>Frequency</th>
