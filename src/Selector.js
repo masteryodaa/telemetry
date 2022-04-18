@@ -3,6 +3,7 @@ import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 import DatePicker from 'react-date-picker';
 import { Link } from 'react-router-dom';
+import TableModal from './TableModal';
 
 const animatedComponents = makeAnimated();
 
@@ -187,6 +188,9 @@ function Selector(props) {
             </div>
 
             <div className='process my-3'>
+
+
+
                 <Link to={'/result'}>
                     <div className="button text-center text-white noselect" onClick={
 
@@ -201,7 +205,34 @@ function Selector(props) {
                 </Link>
             </div>
 
-        </div>
+
+
+
+            {/* Modal Popup */}
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+
+
+                            {/* modal body */}
+
+                            <TableModal />
+
+                            <div className='process mt-3'>
+                                <div class="configuredBtn m-0 mb-0" data-bs-dismiss="modal">Close</div>
+                            </div>
+
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+
+        </div >
     )
 }
 
