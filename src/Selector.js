@@ -4,11 +4,6 @@ import makeAnimated from 'react-select/animated';
 import DatePicker from 'react-date-picker';
 import { Link } from 'react-router-dom';
 
-// import PopupModal from './PopupModal';
-
-// import AddDeleteTableRows from './Row';
-
-// import TableRows from './TableRows';
 
 import TableModal from './TableModal';
 
@@ -334,6 +329,7 @@ function Selector(props) {
                             setAlertName1={setAlertName1} setAlertName2={setAlertName2} setAlertName3={setAlertName3}
                             frequency1={frequency1} frequency2={frequency2} frequency3={frequency3}
                             setFrequency1={setFrequency1} setFrequency2={setFrequency2} setFrequency3={setFrequency3}
+                            alert={alert} vessel={vessel} independentVariables={independentVariables} dependentVariables={dependentVariables} setDependentVariables={setDependentVariables} setIndependentVariables={setIndependentVariables}
                              />
 
 
