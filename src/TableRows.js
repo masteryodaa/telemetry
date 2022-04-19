@@ -1,18 +1,22 @@
+import { useState } from 'react';
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 const animatedComponents = makeAnimated();
 
 
-function TableRows({ rowsData, deleteTableRows, handleChange, options, dependentVariables, setDependentVariables, independentVariables, setIndependentVariables, frequency, setFrequency }) {
+function TableRows({ rowsData, deleteTableRows, handleChange, options,
+     dependentVariables, setDependentVariables, independentVariables, setIndependentVariables,
+      frequency, setFrequency, changeVariable,  }) {
 
+    // const [independentVariables, setIndependentVariables] = useState([]);
+    // const [dependentVariables, setDependentVariables] = useState([]);
 
     return (
 
-
+ 
         rowsData.map((data, index) => {
             const { alertName,
-                //  dependent, independent
-                 } = data;
+                dependent, independent, days } = data;
             return (
 
                 <tr key={index}>
@@ -23,35 +27,45 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options, dependent
                     {/* <td><input type="text" value={independentVariables}  onChange={(evnt)=>(handleChange(index, evnt))} name="independent" className="form-control"/> </td> */}
                     <td>
                         <Select
-                            className="basic-single"
-                            classNamePrefix="select"
-                            closeMenuOnSelect={false}
+                            closeMenuOnSelect={true}
                             components={animatedComponents}
-                            // defaultValue={[options[0]]} 
+                            defaultValue={independent}
                             placeholder="Select variables"
                             isMulti
-                            options={options}
+                            options={options} 
                             noOptionsMessage={() => "No options"}
-                            onChange={setIndependentVariables}
+                            onChange={
+                                (value) => {
+                                    setIndependentVariables(value)
+                                }
+                            }
+                            name="independent"
                         />
                     </td>
 
                     {/* <td><input type="text" value={dependentVariables}  onChange={(evnt)=>(handleChange(index, evnt))} name="dependent" className="form-control" /> </td> */}
                     <td>
                         <Select
-                            closeMenuOnSelect={false}
+                            className="basic-single"
+                            classNamePrefix="select"
+                            closeMenuOnSelect={true}
                             components={animatedComponents}
-                            // defaultValue={[options[1]]}
+                            defaultValue={dependent}
                             placeholder="Select variable"
-                            isMulti
+                            // isMulti
                             options={options}
                             noOptionsMessage={() => "No options"}
-                            onChange={setDependentVariables}
+                            onChange={
+                                (value) => {
+                                    setDependentVariables(value)
+                                }
+                            }
+                            name="dependent"
                         />
                     </td>
 
                     <td>
-                        <input style={{"width":"60px"}} className='form-control' placeholder="days" />
+                        <input value={days} onChange={(evnt) => (handleChange(index, evnt))} style={{ "width": "60px" }} className='form-control' placeholder="days" name='days' />
                     </td>
 
 

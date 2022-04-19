@@ -1,45 +1,33 @@
 import { useState } from "react"
 import TableRows from "./TableRows"
-function AddDeleteTableRows(){
 
-
-    const options = [
-        { value: 'ME Torque (Avg.)', label: 'ME Torque (Avg.)' },
-        { value: 'ME Speed (Avg.)', label: 'ME Speed (Avg.)' },
-        { value: 'ME Mass FO Flow Rate (Avg.)', label: 'ME Mass FO Flow Rate (Avg.)' },
-        { value: 'True Wind Speed at Anemometer Height (Avg.)', label: 'True Wind Speed at Anemometer Height (Avg.)' },
-        { value: 'True Wind Direction at Anemometer Height (Avg.)', label: 'True Wind Direction at Anemometer Height (Avg.)' },
-        { value: 'Speed Through Water (Avg.)', label: 'Speed Through Water (Avg.)' },
-        { value: 'Rate of turn (Avg.)', label: 'Rate of turn (Avg.)' },
-        { value: 'Sea Water Depth (Avg.)', label: 'Sea Water Depth (Avg.)' },
-        { value: 'Relative Wind Speed at Anemometer Height (Avg.)', label: 'Relative Wind Speed at Anemometer Height (Avg.)' },
-        { value: 'Relative Wind Direction at Anemometer Height (Avg.)', label: 'Relative Wind Direction at Anemometer Height (Avg.)' },
-        { value: 'ME Shaft Power (Avg.)', label: 'ME Shaft Power (Avg.)' }
-    ]
+function AddDeleteTableRows(
+    { options, alert, setAlert, alertOptions }
+){
 
 
     const [independentVariables, setIndependentVariables] = useState([]);
     const [dependentVariables, setDependentVariables] = useState([]);
 
-    const [frequency,setFrequency] = useState(0);
+    const [frequency,setFrequency] = useState('');
 
     const [rowsData, setRowsData] = useState([{
-        alertName:'',
-        dependent:'',
-        independent:'',
-        frequency:''  
+        alertName:'Alert 1',
+        dependent:options[0],
+        independent:options[1],
+        days:'50'  
     }]);
  
     const addTableRows = ()=>{
   
         const rowsInput={
             alertName:'',
-            dependent:'',
-            independent:'',
-            frequency:''  
+            dependent:[],
+            independent:[],
+            days:''  
         } 
         setRowsData([...rowsData, rowsInput])
-      
+        
     }
    const deleteTableRows = (index)=>{
         const rows = [...rowsData];
@@ -53,10 +41,11 @@ function AddDeleteTableRows(){
     const rowsInput = [...rowsData];
     rowsInput[index][name] = value;
     setRowsData(rowsInput);
-  
- 
  
 }
+
+
+
     return(
         <div className="container d-flex flex-column align-items-center">
             <div className="row">
@@ -88,7 +77,6 @@ function AddDeleteTableRows(){
                 </div>
             </div>
 
-            <div className="button text-white text-center">process</div>
         </div>
     )
 
