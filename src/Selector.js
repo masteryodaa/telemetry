@@ -175,9 +175,9 @@ function Selector(props) {
         });
 
         console.log(vessel);
-        
-        const formdata = new FormData();
 
+        const formdata = new FormData();
+        formdata.append('vessel', vessel);
         formdata.append('alert',alert);
         // formdata.append('Independent_var', independentArray);
         // formdata.append('dependent_var', dependentArray);
