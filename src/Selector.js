@@ -160,20 +160,24 @@ function Selector(props) {
         props.setFailed(false);
         props.setLoaded(false);
 
-        // console.log('from ', fromDate);
-        // console.log('to ', toDate);
-        // console.log('inputDate ', inputDate);
+        const data = {
+            'vessel': vessel,
+            'fromDate': fromDate,
+            'toDate': toDate,
+            'inputDate': inputDate,
+            'alert': alert
+        }
 
         let independentArray = [];
         let dependentArray = [];
 
-        let alert_name;
+        // let alert_name;
 
-        rowsData.forEach(element => {
-            independentArray.push(element.independent.map(item => item.value));
-            dependentArray.push(element.dependent.map(item => item.value));
-            alert_name = element.alertName;
-        });
+        // rowsData.forEach(element => {
+        //     independentArray.push(element.independent.map(item => item.value));
+        //     dependentArray.push(element.dependent.map(item => item.value));
+        //     alert_name = element.label;
+        // });
 
         // independentVariables.forEach(element => {
         //     independentArray.push(element.value);
@@ -183,20 +187,24 @@ function Selector(props) {
         //     dependentArray.push(element.value);
         // });
 
-        console.log('vessel', vessel);
-        console.log('independentArray', independentArray);
-        console.log('dependentArray', dependentArray);
-        console.log('alert_name', alert_name);
+        // console.log('vessel', vessel);
+        // console.log('independentArray', independentArray);
+        // console.log('dependentArray', dependentArray);
+        // console.log('alert_name', alert_name);
         
 
         const formdata = new FormData();
-        formdata.append('vessel', vessel);
-        formdata.append('alertName',alert_name);
-        formdata.append('Independent_var', independentArray);
-        formdata.append('dependent_var', dependentArray);
-        formdata.append('date_from', fromDate);
-        formdata.append('date_to', toDate);
-        formdata.append('date_inp', inputDate);
+
+        formdata.append('alert',data);
+
+        console.log('alert', data)
+        // formdata.append('vessel', vessel);
+        // formdata.append('alertName',alert_name);
+        // formdata.append('Independent_var', independentArray);
+        // formdata.append('dependent_var', dependentArray);
+        // formdata.append('date_from', fromDate);
+        // formdata.append('date_to', toDate);
+        // formdata.append('date_inp', inputDate);
 
         fetch(
             'http://127.0.0.1:5000/',
