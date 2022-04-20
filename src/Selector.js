@@ -47,14 +47,11 @@ function Selector(props) {
 
     const [vessel, setVessel] = useState([]);
 
-    let alertOptions = [];
+    
+    
 
-    const [alert, setAlert] = useState([]);
-
-
-
-    const [independentVariables, setIndependentVariables] = useState([]);
-    const [dependentVariables, setDependentVariables] = useState([]);
+    const [independentVariables, setIndependentVariables] = useState([options[1]]);
+    const [dependentVariables, setDependentVariables] = useState([options[0]]);
 
     const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
     const [toDate, setToDate] = useState(new Date('2021/05/25'));
@@ -79,12 +76,16 @@ function Selector(props) {
         independent: independentVariables,
         days: '50'
     }]);
+    
+    let alertOptions = [];
+
+    const [alert, setAlert] = useState([]);
 
     const addTableRows = () => {
-
+        
         // setIndependentVariables([]);
         // setDependentVariables([]);
- 
+        
         const rowsInput = {
             alertName: '',
             dependent: [],
@@ -166,21 +167,33 @@ function Selector(props) {
         let independentArray = [];
         let dependentArray = [];
 
-        independentVariables.forEach(element => {
-            independentArray.push(element.value);
+        let alert_name;
+
+        rowsData.forEach(element => {
+            independentArray.push(element.independent.map(item => item.value));
+            dependentArray.push(element.dependent.map(item => item.value));
+            alert_name = element.alertName;
         });
 
-        dependentVariables.forEach(element => {
-            dependentArray.push(element.value);
-        });
+        // independentVariables.forEach(element => {
+        //     independentArray.push(element.value);
+        // });
 
-        console.log(vessel);
+        // dependentVariables.forEach(element => {
+        //     dependentArray.push(element.value);
+        // });
+
+        console.log('vessel', vessel);
+        console.log('independentArray', independentArray);
+        console.log('dependentArray', dependentArray);
+        console.log('alert_name', alert_name);
+        
 
         const formdata = new FormData();
         formdata.append('vessel', vessel);
-        formdata.append('alert',alert);
-        // formdata.append('Independent_var', independentArray);
-        // formdata.append('dependent_var', dependentArray);
+        formdata.append('alertName',alert_name);
+        formdata.append('Independent_var', independentArray);
+        formdata.append('dependent_var', dependentArray);
         formdata.append('date_from', fromDate);
         formdata.append('date_to', toDate);
         formdata.append('date_inp', inputDate);
@@ -310,7 +323,7 @@ function Selector(props) {
                         () => {
                             console.log('sending data');
                             sendData();
-                            console.log(alert);
+                            // console.log(alert);
                         }
 
                     }>
@@ -337,8 +350,8 @@ function Selector(props) {
                         <div className="modal-body p-0 py-2">
 
 
-                            <div className="container d-flex flex-column align-items-center">
-                                <div className="row">
+                            <div className="container d-flex flex-column align-items-center" >
+                                <div className="row" style={{'marginBottom':'100px'}}>
                                     <div className="">
 
                                         <table className="table">
