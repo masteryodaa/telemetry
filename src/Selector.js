@@ -5,7 +5,11 @@ import DatePicker from 'react-date-picker';
 import { Link } from 'react-router-dom';
 
 
-import TableModal from './TableModal';
+// import TableModal from './TableModal';
+
+// import Row from './Row';
+import TableRows from './TableRows';
+
 
 const animatedComponents = makeAnimated();
 
@@ -52,23 +56,6 @@ function Selector(props) {
     const [independentVariables, setIndependentVariables] = useState([]);
     const [dependentVariables, setDependentVariables] = useState([]);
 
-    const [independentVariables1, setIndependentVariables1] = useState([]);
-    const [dependentVariables1, setDependentVariables1] = useState([]);
-
-    const [independentVariables2, setIndependentVariables2] = useState([]);
-    const [dependentVariables2, setDependentVariables2] = useState([]);
-
-    const [independentVariables3, setIndependentVariables3] = useState([]);
-    const [dependentVariables3, setDependentVariables3] = useState([]);
-
-    const [frequency1, setFrequency1] = useState('');
-    const [frequency2, setFrequency2] = useState('');
-    const [frequency3, setFrequency3] = useState('');
-
-    const [alertName1, setAlertName1] = useState('');
-    const [alertName2, setAlertName2] = useState('');
-    const [alertName3, setAlertName3] = useState('');
-
     const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
     const [toDate, setToDate] = useState(new Date('2021/05/25'));
     const [inputDate, setInputDate] = useState(new Date('2021/05/05'));
@@ -86,53 +73,86 @@ function Selector(props) {
     }
 
 
-        
+    const [rowsData, setRowsData] = useState([{
+        alertName: 'Alert 1',
+        dependent: dependentVariables,
+        independent: independentVariables,
+        days: '50'
+    }]);
 
-    const saveconfig = () => {
-        // alertOptions.push({
-        //    value:{
-        //          alertName: row.alertName,
-        //             dependent: row.dependent,
-        //             independent: row.independent,
-        //             days: row.days
-        //    },
-        //     label: row.alertName
-        // })
-        
-        alertOptions.push({
-            value: {
-                alertName: alertName1,
-                dependent: dependentVariables1,
-                independent: independentVariables1,
-                days: frequency1
-            },
-            label: alertName1
-        },
-        {
-            value: {
-                alertName: alertName2,
-                dependent: dependentVariables2,
-                independent: independentVariables2,
-                days: frequency2
-            },
-            label: alertName2
-        },
-        {
-            value: {
-                alertName: alertName3,
-                dependent: dependentVariables3,
-                independent: independentVariables3,
-                days: frequency3
-            },
-            label: alertName3
+    const addTableRows = () => {
+
+        // setIndependentVariables([]);
+        // setDependentVariables([]);
+ 
+        const rowsInput = {
+            alertName: '',
+            dependent: [],
+            independent: [],
+            days: ''
         }
-        )
+        rowsInput['dependent'] = dependentVariables;
+        rowsInput['independent'] = independentVariables;
+        setRowsData([...rowsData, rowsInput])
 
+        // setIndependentVariables([]);
+        // setDependentVariables([]);
 
-        console.log(alertOptions)
+    }
+    const deleteTableRows = (index) => {
+        const rows = [...rowsData];
+        rows.splice(index, 1);
+        setRowsData(rows);
+    }
+
+    const handleChange = (index, evnt) => {
+
+        const { name, value } = evnt.target;
+        const rowsInput = [...rowsData];
+        rowsInput[index][name] = value;
+        // rowsInput.dependent=dependentVariables;
+        // rowsInput.independent=independentVariables;
+        rowsInput['dependent'] = dependentVariables;
+        rowsInput['independent'] = independentVariables;
+        setRowsData(rowsInput);
+
     }
 
 
+    
+    const addRow = () => {
+        let row = [...rowsData];
+        row.forEach(element => {
+            alertOptions.push({
+                value: {
+                    alertName: element.alertName,
+                    dependent: dependentVariables,
+                    independent: independentVariables,
+                    days: element.days
+                },
+                label: element.alertName
+            })
+        }); 
+    }
+    
+    const saveconfig = () => {
+        // let row = [...rowsData];
+        // row.forEach(element => {
+        //     alertOptions.push({
+        //        value: {
+        //              alertName: element.alertName,
+        //                 dependent: element.dependent,
+        //                 independent: element.independent,
+        //                 days: element.days
+        //        },
+        //         label: element.alertName
+        //     })
+        // });
+
+       
+        // console.log('row', row);
+        console.log('alertOptions', alertOptions)
+    }
 
     const sendData = () => {
 
@@ -154,18 +174,21 @@ function Selector(props) {
             dependentArray.push(element.value);
         });
 
-
+        console.log(vessel);
+        
         const formdata = new FormData();
-        formdata.append('Independent_var', independentArray);
-        formdata.append('dependent_var', dependentArray);
+
+        formdata.append('alert',alert);
+        // formdata.append('Independent_var', independentArray);
+        // formdata.append('dependent_var', dependentArray);
         formdata.append('date_from', fromDate);
         formdata.append('date_to', toDate);
         formdata.append('date_inp', inputDate);
 
         fetch(
-            // 'http://127.0.0.1:5000/',
+            'http://127.0.0.1:5000/',
             // 'http://127.0.0.1:3001/',
-            'https://telemetry-backend.herokuapp.com/',
+            // 'https://telemetry-backend.herokuapp.com/',
 
             {
                 method: 'POST',
@@ -287,6 +310,7 @@ function Selector(props) {
                         () => {
                             console.log('sending data');
                             sendData();
+                            console.log(alert);
                         }
 
                     }>
@@ -300,61 +324,42 @@ function Selector(props) {
 
             {/* Modal Popup */}
 
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
+                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div className="modal-content">
 
-                        <div class="modal-header">
-                            <h5 class="modal-title">Vessel configuration </h5>
-                            <button onClick={saveconfig} type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div className="modal-header">
+                            <h5 className="modal-title text-center" style={{"margin":"auto"}}>Alert configuration </h5>
+                            <button onClick={saveconfig} type="button" className="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
-                        <div class="modal-body">
+                        <div className="modal-body p-0 py-2">
 
 
-                            {/* modal body */}
-
-                            {/* <PopupModal /> */}
-
-
-                            <TableModal 
-                            options={options} independentVariables1={independentVariables1} dependentVariables1={dependentVariables1}
-                            independentVariables2={independentVariables2} dependentVariables2={dependentVariables2}
-                            independentVariables3={independentVariables3} dependentVariables3={dependentVariables3}
-                            setIndependentVariables1={setIndependentVariables1} setDependentVariables1={setDependentVariables1}
-                            setIndependentVariables2={setIndependentVariables2} setDependentVariables2={setDependentVariables2}
-                            setIndependentVariables3={setIndependentVariables3} setDependentVariables3={setDependentVariables3}
-                            alertName1={alertName1} alertName2={alertName2} alertName3={alertName3}
-                            setAlertName1={setAlertName1} setAlertName2={setAlertName2} setAlertName3={setAlertName3}
-                            frequency1={frequency1} frequency2={frequency2} frequency3={frequency3}
-                            setFrequency1={setFrequency1} setFrequency2={setFrequency2} setFrequency3={setFrequency3}
-                            alert={alert} vessel={vessel} independentVariables={independentVariables} dependentVariables={dependentVariables} setDependentVariables={setDependentVariables} setIndependentVariables={setIndependentVariables}
-                             />
-
-
-
-                            {/* <div className="container d-flex flex-column align-items-center">
+                            <div className="container d-flex flex-column align-items-center">
                                 <div className="row">
                                     <div className="">
 
                                         <table className="table">
                                             <thead>
-                                                <tr>
+                                                <tr>    
+                                                    <th><button className="btn btn-outline-success" onClick={
+                                                        addTableRows}
+                                                    >+</button></th>
                                                     <th>Alert Name</th>
                                                     <th>Independent variable</th>
                                                     <th>Dependent variable</th>
                                                     <th>Frequency</th>
-                                                    <th><button className="btn btn-outline-success" onClick={
-                                                        addTableRows}
-                                                    >+</button></th>
+                                                    <th>Save</th>
                                                 </tr>
 
                                             </thead>
                                             <tbody>
 
                                                 <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} options={options}
-                                                    dependentVariables={dependentVariables} setDependentVariables={setDependentVariables} independentVariables={independentVariables} setIndependentVariables={setIndependentVariables} frequency={frequency} setFrequency={setFrequency}
+                                                    dependentVariables={dependentVariables} setDependentVariables={setDependentVariables} independentVariables={independentVariables} setIndependentVariables={setIndependentVariables}
+                                                    addRow={addRow}
                                                 />
 
                                             </tbody>
@@ -366,7 +371,7 @@ function Selector(props) {
                                     </div>
                                 </div>
 
-                            </div> */}
+                            </div>
 
                         </div>
 

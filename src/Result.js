@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Plot from 'react-plotly.js';
 import Sidenav from './Sidenav';
+import Map from './Map';
 
 
 function Result(
@@ -287,7 +288,7 @@ function Result(
 
 
   return (
-    <div className='container mt-5'>
+    <div className='container resultPage mt-5'>
 
       <p className='text-center mb-5 resTitle'>Prediction dashboard</p>
 
@@ -297,6 +298,8 @@ function Result(
         <div className="graph_left ">
 
           <div className="graph graph1 leftgraph" id='graph1'>
+
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -405,10 +408,10 @@ function Result(
               ]}
 
               layout={{
-                
+
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g1.label + " Plot",
                 // paper_bgcolor: '#f9f7f3',
                 // plot_bgcolor: '#f9f7f3',
@@ -439,9 +442,9 @@ function Result(
                     color: '#7f7f7f'
                   }
                 },
-               
 
-              
+
+
                 margin: {
                   l: 50,
                   r: 50,
@@ -462,6 +465,9 @@ function Result(
 
 
           <div className="graph graph2 leftgraph" id='graph2'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -567,8 +573,8 @@ function Result(
               layout={{
 
                 autosize: false,
-                width: 550,
-                height: 350, title: g2.label + " Plot",
+                width: 600,
+                height: 400, title: g2.label + " Plot",
                 xaxis: {
                   title: 'Time',
                   titlefont: {
@@ -613,6 +619,9 @@ function Result(
           </div>
 
           <div className="graph graph3 leftgraph" id='graph3'>
+
+             <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -717,8 +726,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g3.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -765,6 +774,9 @@ function Result(
           </div>
 
           <div className="graph graph4 leftgraph" id='graph4'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -869,8 +881,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g4.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -917,6 +929,9 @@ function Result(
           </div>
 
           <div className="graph graph5 leftgraph" id='graph5'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -1021,8 +1036,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g5.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1068,6 +1083,9 @@ function Result(
           </div>
 
           <div className="graph graph6 leftgraph" id='graph6'>
+            
+             <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -1172,8 +1190,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g6.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1219,6 +1237,9 @@ function Result(
           </div>
 
           <div className="graph graph7 leftgraph" id='graph7'>
+
+             <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -1323,8 +1344,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g7.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1370,6 +1391,9 @@ function Result(
           </div>
 
           <div className="graph graph8 leftgraph" id='graph8'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -1473,8 +1497,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g8.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1520,6 +1544,9 @@ function Result(
           </div>
 
           <div className="graph graph9 leftgraph" id='graph9'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -1626,8 +1653,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g9.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1674,6 +1701,9 @@ function Result(
 
 
           <div className="graph graph10 leftgraph" id='graph10'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
             <Plot
 
               data={[
@@ -1781,8 +1811,8 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g10.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1836,12 +1866,15 @@ function Result(
         <div className="graph_right">
 
           <div className="graph graph11" id='graph11'>
+
+          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">🔔</button>
+
             <Plot
 
-            style={{
-              'borderRadius':'50px',
-              'borderColor':'black'
-            }}
+              style={{
+                'borderRadius': '50px',
+                'borderColor': 'black'
+              }}
 
               data={[
 
@@ -1959,8 +1992,8 @@ function Result(
               layout={{
 
                 autosize: false,
-                width: 550,
-                height: 350,
+                width: 600,
+                height: 400,
                 title: g11.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -2008,6 +2041,8 @@ function Result(
           <p>Dependent Graph</p>
 
         </div>
+
+        <Map />
 
       </div>
 

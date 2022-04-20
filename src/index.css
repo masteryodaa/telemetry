@@ -334,12 +334,25 @@ a {
   align-items: center;
 }
 
-
-.graph_container {
+.resultPage{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  /* min-width: max-content; */
 }
+
+.graph_container{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fill-available;
+
+  /* min-width: max-content; */
+
+}
+
 
 
 .graph_left {
@@ -371,6 +384,40 @@ a {
   justify-content: center;
   align-items: center;
   /* margin-left: 5rem; */
+}
+
+.graph{
+  position: relative;
+}
+
+.bellIcon{
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  /* width: 2rem;
+  height: 2rem; */
+  /* background-color: #fff; */
+  border:none;
+  border-radius: 10px;
+  /* cursor: pointer; */
+  z-index: 10;
+}
+
+.coordinates{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: 'Dela Gothic One', cursive;
+}
+
+#map{
+  height: 300px;
+  width: 60vw;
+  margin: 0;
+  margin-bottom: 60px;
+  border-radius: 15px;
+
 }
 
 
@@ -525,4 +572,38 @@ ul {
   background-color: #333;
   text-align: center;
 
+}
+
+
+.tableHead{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.tableHead>p{
+  margin: 0 15px;
+}
+
+.tableRow{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60vw;
+}
+
+.tableRow>*{
+  margin: 15px 15px;
+}
+
+.MuiFormControl-root{
+  width:150px
+}
+
+.MuiFormLabel-root.Mui-focused{
+  font-size: small;
+}
+
+.frequencyInput{
+  width:50px;
 }

@@ -21,24 +21,24 @@ function TableModal({
 		}}>
 
 
-			<table class="table table-hover">
+			<table className="table table-hover">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col-2">Vessel Name</th>
-						<th scope="col-4">Independent Variable</th>
-						<th scope="col-4">Dependent Variable</th>
+						<th scope="col">Vessel Name</th>
+						<th scope="col">Independent Variable</th>
+						<th scope="col">Dependent Variable</th>
 						<th scope="col">Frequency</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<th scope="row">1</th>
-						<td><input type="text" placeholder='type here' value={alertName1} onChange={(e)=>setAlertName1(e.target.value)}  /></td>
+						<td><input type="text" placeholder='type here' value={alertName1} onChange={(e) => setAlertName1(e.target.value)} /></td>
 						<td>
 							<Select
-								className="basic-single"
-								classNamePrefix="select"
+								// className="basic-single"
+								// classNamePrefix="select"
 								closeMenuOnSelect={false}
 								components={animatedComponents}
 								// defaultValue={[options[0]]} 
@@ -52,11 +52,13 @@ function TableModal({
 
 						<td>
 							<Select
-								closeMenuOnSelect={false}
+								className="basic-single"
+								classNamePrefix="select"
+								closeMenuOnSelect={true}
 								components={animatedComponents}
 								// defaultValue={[options[1]]}
 								placeholder="Select variable"
-								isMulti
+								// isMulti
 								options={options}
 								noOptionsMessage={() => "No options"}
 								onChange={setDependentVariables1}
@@ -68,11 +70,11 @@ function TableModal({
 					</tr>
 					<tr>
 						<th scope="row">2</th>
-						<td><input type="text" placeholder='type here' value={alertName2} onChange={(e)=>setAlertName2(e.target.value)} /></td>
+						<td><input type="text" placeholder='type here' value={alertName2} onChange={(e) => setAlertName2(e.target.value)} /></td>
 						<td>
 							<Select
-								className="basic-single"
-								classNamePrefix="select"
+								// className="basic-single"
+								// classNamePrefix="select"
 								closeMenuOnSelect={false}
 								components={animatedComponents}
 								// defaultValue={[options[0]]} 
@@ -86,7 +88,9 @@ function TableModal({
 
 						<td>
 							<Select
-								closeMenuOnSelect={false}
+							className="basic-single"
+							classNamePrefix="select"
+								closeMenuOnSelect={true}
 								components={animatedComponents}
 								// defaultValue={[options[1]]}
 								placeholder="Select variable"
@@ -102,12 +106,12 @@ function TableModal({
 					</tr>
 
 					<tr>
-						<th scope="row">1</th>
-						<td><input type="text" placeholder='type here' value={alertName3} onChange={(e)=>setAlertName3(e.target.value)}  /></td>
+						<th scope="row">3</th>
+						<td><input type="text" placeholder='type here' value={alertName3} onChange={(e) => setAlertName3(e.target.value)} /></td>
 						<td>
 							<Select
-								className="basic-single"
-								classNamePrefix="select"
+								// className="basic-single"
+								// classNamePrefix="select"
 								closeMenuOnSelect={false}
 								components={animatedComponents}
 								// defaultValue={[options[0]]} 
@@ -121,7 +125,9 @@ function TableModal({
 
 						<td>
 							<Select
-								closeMenuOnSelect={false}
+							className="basic-single"
+							classNamePrefix="select"
+								closeMenuOnSelect={true}
 								components={animatedComponents}
 								// defaultValue={[options[1]]}
 								placeholder="Select variable"
