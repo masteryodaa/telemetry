@@ -288,9 +288,10 @@ function Result(
 
 
   return (
-    <div className='container resultPage mt-5'>
+    <div className='container resultPage'>
+      {/* <p className='text-center resTitle'>Prediction dashboard</p> */}
+      <Sidenav />
 
-      <p className='text-center mb-5 resTitle'>Prediction dashboard</p>
 
 
       <div className="graph_container">
@@ -407,14 +408,12 @@ function Result(
 
               ]}
 
-              layout={{
 
+              layout={{
                 autosize: false,
-                width: 600,
-                height: 400,
+                width: 600, 
+                height: 300,
                 title: g1.label + " Plot",
-                // paper_bgcolor: '#f9f7f3',
-                // plot_bgcolor: '#f9f7f3',
                 xaxis: {
                   title: 'Time',
                   titlefont: {
@@ -429,6 +428,8 @@ function Result(
                   }
                 },
 
+
+
                 yaxis: {
                   title: g1.label,
                   titlefont: {
@@ -442,9 +443,6 @@ function Result(
                     color: '#7f7f7f'
                   }
                 },
-
-
-
                 margin: {
                   l: 50,
                   r: 50,
@@ -453,20 +451,32 @@ function Result(
                   pad: 5
                 },
 
-
               }}
 
+              config={{
+                responsive: true,
+              }}
 
             />
 
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g1.pred_err}% </small>
-            <small className='mb-1 p-0 secondary'>deviation from historical mean : {g1.mean_err}% </small>
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g1.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g1.mean_err}%
+              </div>
+            </div>
+
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g1.pred_err}% </small>
+            <small className='mb-1 p-0 secondary'>deviation from historical mean : {g1.mean_err}% </small> */}
           </div>
 
 
           <div className="graph graph2 leftgraph" id='graph2'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -570,11 +580,15 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
 
                 autosize: false,
                 width: 600,
-                height: 400, title: g2.label + " Plot",
+                height: 300, title: g2.label + " Plot",
                 xaxis: {
                   title: 'Time',
                   titlefont: {
@@ -614,13 +628,24 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g2.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g2.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g2.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g2.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g2.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g2.mean_err}%
+              </div>
+            </div>
+
           </div>
 
           <div className="graph graph3 leftgraph" id='graph3'>
 
-             <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -724,10 +749,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g3.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -769,13 +798,24 @@ function Result(
 
             />
 
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g3.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g3.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g3.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g3.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g3.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g3.mean_err}%
+              </div>
+            </div>
           </div>
 
           <div className="graph graph4 leftgraph" id='graph4'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
 
             <Plot
 
@@ -879,10 +919,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g4.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -924,13 +968,24 @@ function Result(
 
             />
 
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g4.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g4.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g4.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g4.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g4.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g4.mean_err}%
+              </div>
+            </div>
+
           </div>
 
           <div className="graph graph5 leftgraph" id='graph5'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -939,7 +994,7 @@ function Result(
                   x: g5.date,
                   y: g5.prediction,
                   type: 'scatter',
-                  mode: 'markers+lines',
+                  mode: 'markers',
 
                   error_y: {
                     color: '#b2ff9e',
@@ -1034,10 +1089,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g5.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1078,13 +1137,23 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g5.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g5.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g5.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g5.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g5.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g5.mean_err}%
+              </div>
+            </div>
           </div>
 
           <div className="graph graph6 leftgraph" id='graph6'>
-            
-             <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -1188,10 +1257,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g6.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1232,13 +1305,23 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g6.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g6.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g6.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g6.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g6.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g6.mean_err}%
+              </div>
+            </div>
           </div>
 
           <div className="graph graph7 leftgraph" id='graph7'>
 
-             <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -1342,10 +1425,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g7.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1386,13 +1473,24 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g7.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g7.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g7.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g7.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g7.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g7.mean_err}%
+              </div>
+            </div>
+
           </div>
 
           <div className="graph graph8 leftgraph" id='graph8'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -1495,10 +1593,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g8.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1539,13 +1641,24 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g8.pred_err}</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g8.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g8.pred_err}</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g8.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g8.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g8.mean_err}%
+              </div>
+            </div>
+
           </div>
 
           <div className="graph graph9 leftgraph" id='graph9'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -1651,10 +1764,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g9.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1695,14 +1812,24 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g9.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g9.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g9.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g9.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g9.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g9.mean_err}%
+              </div>
+            </div>
           </div>
 
 
           <div className="graph graph10 leftgraph" id='graph10'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
 
             <Plot
 
@@ -1809,10 +1936,14 @@ function Result(
 
               ]}
 
+              config={{
+                responsive: true,
+              }}
+
               layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g10.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -1853,13 +1984,24 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g10.pred_err}%</small>
-            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g10.mean_err}%</small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g10.pred_err}%</small>
+            <small className='mb-1 p-0 secondary'>deviation from historical prediction : {g10.mean_err}%</small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g10.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g10.mean_err}%
+              </div>
+            </div>
+
           </div>
 
 
 
-          <p>Independent Graph</p>
+          {/* <p className='indep_info'>Independent Graph</p> */}
 
         </div>
 
@@ -1867,14 +2009,10 @@ function Result(
 
           <div className="graph graph11" id='graph11'>
 
-          <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">🔔</button>
+            <button class="bellIcon" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
+              🔔</button>
 
             <Plot
-
-              style={{
-                'borderRadius': '50px',
-                'borderColor': 'black'
-              }}
 
               data={[
 
@@ -1989,11 +2127,14 @@ function Result(
 
               ]}
 
-              layout={{
+              config={{
+                responsive: true,
+              }}
 
+              layout={{
                 autosize: false,
                 width: 600,
-                height: 400,
+                height: 300,
                 title: g11.label + " Plot",
                 xaxis: {
                   title: 'Time',
@@ -2034,31 +2175,31 @@ function Result(
 
 
             />
-            <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g11.pred_err}% </small>
-            <small className='mb-1 p-0 secondary'>deviation from historical mean :  {g11.mean_err}% </small>
+            {/* <small className='mt-1 p-0 secondary'>deviation from model' prediction : {g11.pred_err}% </small>
+            <small className='mb-1 p-0 secondary'>deviation from historical mean :  {g11.mean_err}% </small> */}
+
+            <div className="graph_info">
+              <div>
+                deviation from model' prediction : {g11.pred_err}%
+              </div>
+
+              <div>
+                deviation from historical mean : {g11.mean_err}%
+              </div>
+            </div>
+
           </div>
 
-          <p>Dependent Graph</p>
+          {/* <p className='dep_info'>Dependent Graph</p> */}
 
         </div>
-
-        <Map />
 
       </div>
 
 
-      <Sidenav
-        g1={g1.label}
-        g2={g2.label}
-        g3={g3.label}
-        g4={g4.label}
-        g5={g5.label}
-        g6={g6.label}
-        g7={g7.label}
-        g8={g8.label}
-        g9={g9.label}
-        g10={g10.label}
-      />
+      <div className="map_container">
+        <Map />
+      </div>
 
 
     </div>

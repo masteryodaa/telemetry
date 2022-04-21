@@ -327,79 +327,122 @@ a {
   font-size: 1.5rem;
 }
 
-.graph_layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .resultPage{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* min-width: max-content; */
+  margin-right: 0;
+  /* padding-right: 0; */
+  max-width: -webkit-fill-available;
+  min-width: -webkit-fill-available;
 }
 
 .graph_container{
   display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content:flex-end; */
   align-items: center;
-  width: -webkit-fill-available;
-
-  /* min-width: max-content; */
-
+  width: 50vw;
+  height: 85vh;
 }
 
+.graph{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  width: fit-content;
+  height: 100%;
+}
 
-
-.graph_left {
-  /* width: 100px; */
+.graph_left{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
+  height: 100%;
 }
 
-.leftgraph {
+.graph_right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+
+.leftgraph{
   display: none;
 }
 
-.graph1,
-.graph11 {
+.graph1{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
-
-.graph_right {
-  /* width: 100px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* margin-left: 5rem; */
+.graph_info{
+  position: absolute;
+  bottom: 2px;
+  font-size: 12px;
+  font-weight: lighter;
 }
+
+.indep_info{
+  position: absolute;
+  bottom: 2px;
+}
+
+.dep_info{
+  position: absolute;
+  bottom: 2px;
+}
+
+.map_container{
+  width: 40vw;
+  margin-right: 2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+#map{
+  height: 85vh;
+  /* width: 60vw; */
+  margin: 0;
+  margin-bottom: 60px;
+  border-radius: 15px;
+
+}
+
+.leaflet-control-attribution>svg{
+  display:none;
+}
+
 
 .graph{
   position: relative;
 }
 
+.plot-container{
+  position:relative;
+}
+
 .bellIcon{
   position: absolute;
-  top: 40px;
+  top: 28px;
   right: 10px;
   /* width: 2rem;
   height: 2rem; */
   /* background-color: #fff; */
   border:none;
   border-radius: 10px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   /* cursor: pointer; */
+  /* color: #000; */
   z-index: 10;
 }
 
@@ -407,19 +450,9 @@ a {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Dela Gothic One', cursive;
 }
-
-#map{
-  height: 300px;
-  width: 60vw;
-  margin: 0;
-  margin-bottom: 60px;
-  border-radius: 15px;
-
-}
-
 
 .main-svg {
   border-radius: 20px;
@@ -574,36 +607,3 @@ ul {
 
 }
 
-
-.tableHead{
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.tableHead>p{
-  margin: 0 15px;
-}
-
-.tableRow{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 60vw;
-}
-
-.tableRow>*{
-  margin: 15px 15px;
-}
-
-.MuiFormControl-root{
-  width:150px
-}
-
-.MuiFormLabel-root.Mui-focused{
-  font-size: small;
-}
-
-.frequencyInput{
-  width:50px;
-}

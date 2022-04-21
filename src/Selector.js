@@ -47,8 +47,8 @@ function Selector(props) {
 
     const [vessel, setVessel] = useState([]);
 
-    
-    
+
+
 
     const [independentVariables, setIndependentVariables] = useState([options[1]]);
     const [dependentVariables, setDependentVariables] = useState([options[0]]);
@@ -76,16 +76,25 @@ function Selector(props) {
         independent: independentVariables,
         days: '50'
     }]);
-    
-    let alertOptions = [];
+
+    let alertOptions = [
+        {
+            value: {
+                alertName: 'Alert 1',
+                dependent: options[2],
+                independent: [options[0], options[1]],
+                days: 100
+            }, label: 'Alert 1'
+        }
+    ];
 
     const [alert, setAlert] = useState([]);
 
     const addTableRows = () => {
-        
+
         // setIndependentVariables([]);
         // setDependentVariables([]);
-        
+
         const rowsInput = {
             alertName: '',
             dependent: [],
@@ -96,8 +105,8 @@ function Selector(props) {
         rowsInput['independent'] = independentVariables;
         setRowsData([...rowsData, rowsInput])
 
-        // setIndependentVariables([]);
-        // setDependentVariables([]);
+        setIndependentVariables([]);
+        setDependentVariables([]);
 
     }
     const deleteTableRows = (index) => {
@@ -120,22 +129,28 @@ function Selector(props) {
     }
 
 
-    
+
     const addRow = () => {
         let row = [...rowsData];
+        console.log('row', row);
+        
         row.forEach(element => {
-            alertOptions.push({
-                value: {
-                    alertName: element.alertName,
-                    dependent: dependentVariables,
-                    independent: independentVariables,
-                    days: element.days
-                },
-                label: element.alertName
-            })
-        }); 
+            if (element.alertName === row.alertName) {
+                row.splice(row.indexOf(element), 1);
+
+                   alertOptions.push({
+                    value: {
+                        alertName: element.alertName,
+                        dependent: dependentVariables,
+                        independent: independentVariables,
+                        days: element.days
+                    },
+                    label: element.alertName
+                })
+            }
+        });
     }
-    
+
     const saveconfig = () => {
         // let row = [...rowsData];
         // row.forEach(element => {
@@ -150,12 +165,15 @@ function Selector(props) {
         //     })
         // });
 
-       
+
         // console.log('row', row);
         console.log('alertOptions', alertOptions)
     }
 
     const sendData = () => {
+
+        console.log('alert', alert);
+        console.log('vesselname', vessel);
 
         props.setFailed(false);
         props.setLoaded(false);
@@ -175,12 +193,12 @@ function Selector(props) {
             independentArray.push(element.independent.map(item => item.value));
             dependentArray.push(element.dependent.map(item => item.value));
         });
-        
+
 
         fetch(
-            'http://127.0.0.1:5000/',
+            // 'http://127.0.0.1:5000/',
             // 'http://127.0.0.1:3001/',
-            // 'https://telemetry-backend.herokuapp.com/',
+            'https://telemetry-api.herokuapp.com/',
 
             {
                 method: 'POST',
@@ -261,7 +279,7 @@ function Selector(props) {
                     classNamePrefix="select"
                     closeMenuOnSelect={true}
                     components={animatedComponents}
-                    // defaultValue={[options[1]]}
+                    // defaultValue={[alertOptions[0]]}
                     placeholder="Select alert name"
                     // isMulti
                     options={alertOptions}
@@ -322,7 +340,7 @@ function Selector(props) {
                     <div className="modal-content">
 
                         <div className="modal-header">
-                            <h5 className="modal-title text-center" style={{"margin":"auto"}}>Alert configuration </h5>
+                            <h5 className="modal-title text-center" style={{ "margin": "auto" }}>Alert configuration </h5>
                             <button onClick={saveconfig} type="button" className="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -330,12 +348,12 @@ function Selector(props) {
 
 
                             <div className="container d-flex flex-column align-items-center" >
-                                <div className="row" style={{'marginBottom':'100px'}}>
+                                <div className="row" style={{ 'marginBottom': '100px' }}>
                                     <div className="">
 
                                         <table className="table">
                                             <thead>
-                                                <tr>    
+                                                <tr>
                                                     <th><button className="btn btn-outline-success" onClick={
                                                         addTableRows}
                                                     >+</button></th>
