@@ -55,7 +55,7 @@ function Selector(props) {
 
     const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
     const [toDate, setToDate] = useState(new Date('2021/05/25'));
-    const [inputDate, setInputDate] = useState(new Date('2021/05/05'));
+    const [inputDate, setInputDate] = useState(new Date('2021/05/06'));
 
     const changeFromDate = (date) => {
         setFromDate(date)
@@ -81,7 +81,7 @@ function Selector(props) {
         {
             value: {
                 alertName: 'Alert 1',
-                dependent: options[2],
+                dependent: [options[2]],
                 independent: [options[0], options[1]],
                 days: 100
             }, label: 'Alert 1'

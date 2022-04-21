@@ -290,8 +290,6 @@ function Result(
   return (
     <div className='container resultPage'>
       {/* <p className='text-center resTitle'>Prediction dashboard</p> */}
-      <Sidenav />
-
 
 
       <div className="graph_container">
@@ -2007,7 +2005,7 @@ function Result(
 
         <div className="graph_right">
 
-          <div className="graph graph11" id='graph11'>
+          <div className="graph graph11 rightgraph" id='graph11'>
 
             <button class="bellIcon" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
               🔔</button>
@@ -2200,6 +2198,19 @@ function Result(
       <div className="map_container">
         <Map />
       </div>
+
+      <Sidenav
+        g1={g1.label}
+        g2={g2.label}
+        g3={g3.label}
+        g4={g4.label}
+        g5={g5.label}
+        g6={g6.label}
+        g7={g7.label}
+        g8={g8.label}
+        g9={g9.label}
+        g10={g10.label}
+      />
 
 
     </div>
