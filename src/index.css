@@ -391,16 +391,6 @@ a {
   font-weight: lighter;
 }
 
-.indep_info{
-  position: absolute;
-  bottom: 2px;
-}
-
-.dep_info{
-  position: absolute;
-  bottom: 2px;
-}
-
 .map_container{
   width: 40vw;
   margin-right: 2rem;
@@ -433,6 +423,27 @@ a {
 .graph{
   position: relative;
   /* border: 2px solid red; */
+}
+
+.graph_left{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.graph_left, .graph_right{
+  position: relative;
+}
+
+.indep_info{
+  position: absolute;
+  bottom: -35px;
+  display: none;
+}
+
+.dep_info{
+  position: absolute;
+  bottom: -35px;
+  display: none;
 }
 
 

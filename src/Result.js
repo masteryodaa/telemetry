@@ -1999,7 +1999,7 @@ function Result(
 
 
 
-          {/* <p className='indep_info'>Independent Graph</p> */}
+          <p className='indep_info'>Independent Graph</p>
 
         </div>
 
@@ -2188,7 +2188,7 @@ function Result(
 
           </div>
 
-          {/* <p className='dep_info'>Dependent Graph</p> */}
+          <p className='dep_info'>Dependent Graph</p>
 
         </div>
 
