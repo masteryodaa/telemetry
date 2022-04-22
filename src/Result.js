@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect,
+  //  useState
+    } from 'react'
 import Plot from 'react-plotly.js';
 import Sidenav from './Sidenav';
 import Map from './Map';
-import DatePicker from 'react-date-picker';
+// import DatePicker from 'react-date-picker';
 
 
 
@@ -27,18 +29,18 @@ function Result(
     setG12(g12);
   }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12]);
 
-  const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
-  const [toDate, setToDate] = useState(new Date('2021/05/25'));
+  // const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
+  // const [toDate, setToDate] = useState(new Date('2021/05/25'));
 
-  const changeFromDate = (date) => {
-    setFromDate(date);
+  // const changeFromDate = (date) => {
+  //   setFromDate(date);
     
     
-  }
+  // }
 
-  const changeToDate = (date) => {
-    setToDate(date)
-  } 
+  // const changeToDate = (date) => {
+  //   setToDate(date)
+  // } 
   
 
 
