@@ -21,6 +21,7 @@ function App() {
   const [g9, setG9] = useState([]);
   const [g10, setG10] = useState([]);
   const [g11, setG11] = useState([]);
+  const [g12, setG12] = useState([]);
 
 
 
@@ -50,6 +51,7 @@ function App() {
             g9={g9} setG9={setG9}
             g10={g10} setG10={setG10}
             g11={g11} setG11={setG11}
+            g12={g12} setG12={setG12}
 
           />}></Route>
 
@@ -72,6 +74,7 @@ function App() {
                     g9={g9}
                     g10={g10}
                     g11={g11}
+                    g12={g12}
 
                     setG1={setG1}
                     setG2={setG2}
@@ -84,6 +87,7 @@ function App() {
                     setG9={setG9}
                     setG10={setG10}
                     setG11={setG11}
+                    setG12={setG12}
 
                   />}></Route>
                 :

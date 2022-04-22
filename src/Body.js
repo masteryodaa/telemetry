@@ -31,6 +31,7 @@ function Body(props) {
                     g9={props.g9} setG9={props.setG9}
                     g10={props.g10} setG10={props.setG10}
                     g11={props.g11} setG11={props.setG11}
+                    g12={props.g12} setG12={props.setG12}
 
                 />
             </div>

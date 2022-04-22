@@ -235,6 +235,7 @@ function Selector(props) {
                     props.setG9(data[Object.keys(data)[8]]);
                     props.setG10(data[Object.keys(data)[9]]);
                     props.setG11(data[Object.keys(data)[10]]);
+                    props.setG12(data[Object.keys(data)[11]]);
 
                     props.setLoaded(true);
 
