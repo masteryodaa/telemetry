@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { MapContainer, TileLayer, Marker, LayersControl, Tooltip, Polyline } from 'react-leaflet'
+// import React, {useState, useEffect} from 'react';
+import { MapContainer, TileLayer, Marker, LayersControl, Tooltip } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 
 // import {icon} from './Icon'
