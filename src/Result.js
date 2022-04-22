@@ -2444,6 +2444,19 @@ function Result(
         g8={g8.label}
         g9={g9.label}
         g10={g10.label}
+
+        g1Flag={g1.notification}
+        g2Flag={g2.notification}
+        g3Flag={g3.notification}
+        g4Flag={g4.notification}
+        g5Flag={g5.notification}
+        g6Flag={g6.notification}
+        g7Flag={g7.notification}
+        g8Flag={g8.notification}
+        g9Flag={g9.notification}
+        g10Flag={g10.notification}
+        
+
       />
 
 

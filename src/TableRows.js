@@ -27,7 +27,7 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                     {/* <td><input type="text" value={independentVariables}  onChange={(evnt)=>(handleChange(index, evnt))} name="independent" className="form-control"/> </td> */}
                     <td>
                         <Select
-                            closeMenuOnSelect={true}
+                            closeMenuOnSelect={false}
                             components={animatedComponents}
                             defaultValue={independent}
                             placeholder="Select variables"

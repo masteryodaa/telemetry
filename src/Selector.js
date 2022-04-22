@@ -82,7 +82,7 @@ function Selector(props) {
             value: {
                 alertName: 'Alert 1',
                 dependent: [options[2]],
-                independent: [options[0], options[1]],
+                independent: [options[0], options[1], options[2]],
                 days: 100
             }, label: 'Alert 1'
         }
@@ -152,18 +152,18 @@ function Selector(props) {
     }
 
     const saveconfig = () => {
-        // let row = [...rowsData];
-        // row.forEach(element => {
-        //     alertOptions.push({
-        //        value: {
-        //              alertName: element.alertName,
-        //                 dependent: element.dependent,
-        //                 independent: element.independent,
-        //                 days: element.days
-        //        },
-        //         label: element.alertName
-        //     })
-        // });
+        let row = [...rowsData];
+        row.forEach(element => {
+            alertOptions.push({
+               value: {
+                     alertName: element.alertName,
+                        dependent: element.dependent,
+                        independent: element.independent,
+                        days: element.days
+               },
+                label: element.alertName
+            })
+        });
 
 
         // console.log('row', row);
@@ -195,7 +195,7 @@ function Selector(props) {
         });
 
 
-        fetch(
+        fetch(  
             // 'http://127.0.0.1:5000/',
             // 'http://127.0.0.1:3001/',
             'https://telemetry-api.herokuapp.com/',
@@ -321,7 +321,7 @@ function Selector(props) {
                         () => {
                             console.log('sending data');
                             sendData();
-                            // console.log(alert);
+                            console.log(alert); 
                         }
 
                     }>
@@ -349,7 +349,7 @@ function Selector(props) {
 
 
                             <div className="container d-flex flex-column align-items-center" >
-                                <div className="row" style={{ 'marginBottom': '100px' }}>
+                                <div className="row" style={{ 'marginBottom': '140px' }}>
                                     <div className="">
 
                                         <table className="table">
@@ -383,10 +383,6 @@ function Selector(props) {
                                 </div>
 
                             </div>
-
-                        </div>
-
-                        <div className="modal-footer">
 
                         </div>
 

@@ -24,10 +24,10 @@ function Map({ g12 }) {
     // console.log(g12);
 
     const coordinates = g12.coordinates;
-    console.log('coordinates', coordinates);
+    // console.log('coordinates', coordinates);
 
     const coordinates_data = g12.coordinates_data;
-    console.log('coordinates data', coordinates_data);
+    // console.log('coordinates data', coordinates_data);
 
 
 
@@ -59,7 +59,7 @@ function Map({ g12 }) {
 
                 {coordinates.map((coordinate, index) => {
                     return (
-                        <Marker key={index} position={coordinate}>
+                        <Marker key={index} position={coordinate} center={coordinates[0]} >
                             <Tooltip>
                                 <div>Average Speed : {String(coordinates_data[index][0]).slice(0, 5)} </div>
                                 <div>Average Torque : {String(coordinates_data[index][1]).slice(0, 5)} </div>

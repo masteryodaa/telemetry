@@ -1,8 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { VscGraphLine } from 'react-icons/vsc';
 
 
-function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
+function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10,
+    g1Flag, g2Flag, g3Flag, g4Flag, g5Flag, g6Flag, g7Flag, g8Flag, g9Flag, g10Flag
+}) {
+
+    useEffect(() => {
+
+        g1Flag? document.getElementById('a1').style.color = '#ff0000' : document.getElementById('a1').style.color = '#000';
+
+        g2Flag? document.getElementById('a2').style.color = '#ff0000' : document.getElementById('a2').style.color = '#000';
+
+        g3Flag? document.getElementById('a3').style.color = '#ff0000' : document.getElementById('a3').style.color = '#000';
+
+        g4Flag? document.getElementById('a4').style.color = '#ff0000' : document.getElementById('a4').style.color = '#000';
+
+        g5Flag? document.getElementById('a5').style.color = '#ff0000' : document.getElementById('a5').style.color = '#000';
+
+        g6Flag? document.getElementById('a6').style.color = '#ff0000' : document.getElementById('a6').style.color = '#000';
+
+        g7Flag? document.getElementById('a7').style.color = '#ff0000' : document.getElementById('a7').style.color = '#000';
+
+        g8Flag? document.getElementById('a8').style.color = '#ff0000' : document.getElementById('a8').style.color = '#000';
+
+        g9Flag? document.getElementById('a9').style.color = '#ff0000' : document.getElementById('a9').style.color = '#000';
+
+        g10Flag? document.getElementById('a10').style.color = '#ff0000' : document.getElementById('a10').style.color = '#000';
+
+    }, [g1Flag, g2Flag, g3Flag, g4Flag, g5Flag, g6Flag, g7Flag, g8Flag, g9Flag, g10Flag])
+
     return (
         <div className='sideContainer'>
 
@@ -242,7 +269,7 @@ function Sidenav({ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10 }) {
                 }}
             >
                 <div className="innerSidenav">
-                <VscGraphLine className='sidenavIcon me-1' size={22} />
+                    <VscGraphLine className='sidenavIcon me-1' size={22} />
                     <p className='sidenavText'>{g9}</p>
                 </div>
             </a>
