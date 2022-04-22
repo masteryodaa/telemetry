@@ -28,8 +28,8 @@ function Result(
 
 
   console.log(g1);
-  console.log(g1.date);
-  console.log(g1.prediction);
+  // console.log(g1.date);
+  // console.log(g1.prediction);
 
 
   let g1y1Error = [];
@@ -298,7 +298,28 @@ function Result(
 
           <div className="graph graph1 leftgraph" id='graph1'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g1.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g1.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g1.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -409,7 +430,7 @@ function Result(
 
               layout={{
                 autosize: false,
-                width: 600, 
+                width: 600,
                 height: 300,
                 title: g1.label + " Plot",
                 xaxis: {
@@ -474,7 +495,28 @@ function Result(
 
           <div className="graph graph2 leftgraph" id='graph2'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g2.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g2.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g2.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -643,7 +685,28 @@ function Result(
 
           <div className="graph graph3 leftgraph" id='graph3'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g3.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g3.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g3.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -812,7 +875,28 @@ function Result(
 
           <div className="graph graph4 leftgraph" id='graph4'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g4.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g4.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g4.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
 
             <Plot
@@ -983,7 +1067,28 @@ function Result(
 
           <div className="graph graph5 leftgraph" id='graph5'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g5.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g5.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g5.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -1151,7 +1256,28 @@ function Result(
 
           <div className="graph graph6 leftgraph" id='graph6'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g6.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g6.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g6.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -1319,7 +1445,28 @@ function Result(
 
           <div className="graph graph7 leftgraph" id='graph7'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g7.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g7.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g7.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -1488,7 +1635,28 @@ function Result(
 
           <div className="graph graph8 leftgraph" id='graph8'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g8.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g8.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g8.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -1656,7 +1824,28 @@ function Result(
 
           <div className="graph graph9 leftgraph" id='graph9'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+            {
+              g9.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g9.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g9.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -1827,7 +2016,28 @@ function Result(
 
           <div className="graph graph10 leftgraph" id='graph10'>
 
-            <button className='bellIcon' data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">🔔</button>
+          {
+              g10.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g10.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g10.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
 
             <Plot
 
@@ -2007,8 +2217,29 @@ function Result(
 
           <div className="graph graph11 rightgraph" id='graph11'>
 
-            <button class="bellIcon" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
-              🔔</button>
+          {
+              g11.notification ?
+
+                <div className="bellIcon">
+                  <div class="tooltip">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+
+                    <div className="notification tooltiptext">
+                      <div className="notification_text">
+                        {/* <p>{g9.notification_data.name}</p> */}
+                        <div>Predicted Value - {g11.notification_data["predicted value"]}</div>
+                        <div>Real Value - {g11.notification_data["real value"]}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                : null
+            }
+
 
             <Plot
 
