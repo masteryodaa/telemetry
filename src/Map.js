@@ -19,7 +19,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 function Map({ g12 }) {
 
-    const center = [25.58341413206471, 85.09624567435982];
+    // const center = [25.58341413206471, 85.09624567435982];
 
     // console.log(g12);
 
@@ -29,12 +29,16 @@ function Map({ g12 }) {
     const coordinates_data = g12.coordinates_data;
     // console.log('coordinates data', coordinates_data);
 
+    console.log(coordinates[0])
+
+    const center = [coordinates[0][0], coordinates[0][1]];
+
 
 
     return (
         <div className='mapBody'>
 
-            <MapContainer id='map' center={center} zoom={3} scrollWheelZoom={true}>
+            <MapContainer id='map' center={center} zoom={4} scrollWheelZoom={true}>
 
                 <LayersControl position="topright">
                     <LayersControl.BaseLayer checked name="OpenStreetMap">
@@ -59,7 +63,7 @@ function Map({ g12 }) {
 
                 {coordinates.map((coordinate, index) => {
                     return (
-                        <Marker key={index} position={coordinate} center={coordinates[0]} >
+                        <Marker key={index} position={coordinate} center={center} >
                             <Tooltip>
                                 <div>Average Speed : {String(coordinates_data[index][0]).slice(0, 5)} </div>
                                 <div>Average Torque : {String(coordinates_data[index][1]).slice(0, 5)} </div>
