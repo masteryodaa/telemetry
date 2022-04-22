@@ -1,6 +1,6 @@
 import Selector from './Selector';
-import svg from './Spreadsheets-amico.svg';
-// import gif from './gif1.gif';
+// import svg from './Spreadsheets-amico.svg';
+import gif from './animation.gif';
 
 function Body(props) {
 
@@ -11,7 +11,7 @@ function Body(props) {
 
                 {/* <iframe className='img-fluid' alt="logo" width='500px' src="https://embed.lottiefiles.com/animation/92091" title='gif' ></iframe> */}
 
-                <img src={svg} className='img-fluid ms-2' alt="logo" width='500px'
+                <img src={gif} className='img-fluid ms-2' alt="logo" width='500px'
                 /> 
 
                 {/* <a href="https://storyset.com/finance">Finance illustrations by Storyset</a> */}

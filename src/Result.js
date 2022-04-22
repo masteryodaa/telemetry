@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Plot from 'react-plotly.js';
 import Sidenav from './Sidenav';
 import Map from './Map';
+import DatePicker from 'react-date-picker';
+
 
 
 function Result(
   { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12,
-    setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12
+    setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12, loaded, setLoaded, failed, setFailed
   }
 ) {
 
@@ -23,7 +25,21 @@ function Result(
     setG10(g10);
     setG11(g11);
     setG12(g12);
-  }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12])
+  }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12]);
+
+  const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
+  const [toDate, setToDate] = useState(new Date('2021/05/25'));
+
+  const changeFromDate = (date) => {
+    setFromDate(date);
+    
+    
+  }
+
+  const changeToDate = (date) => {
+    setToDate(date)
+  } 
+  
 
 
 
@@ -299,13 +315,13 @@ function Result(
 
           <div className="graph graph1 leftgraph" id='graph1'>
 
-          {
+            {
               g1.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -496,13 +512,13 @@ function Result(
 
           <div className="graph graph2 leftgraph" id='graph2'>
 
-          {
+            {
               g2.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -686,13 +702,13 @@ function Result(
 
           <div className="graph graph3 leftgraph" id='graph3'>
 
-          {
+            {
               g3.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -876,13 +892,13 @@ function Result(
 
           <div className="graph graph4 leftgraph" id='graph4'>
 
-          {
+            {
               g4.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -1068,13 +1084,13 @@ function Result(
 
           <div className="graph graph5 leftgraph" id='graph5'>
 
-          {
+            {
               g5.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -1257,13 +1273,13 @@ function Result(
 
           <div className="graph graph6 leftgraph" id='graph6'>
 
-          {
+            {
               g6.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -1446,13 +1462,13 @@ function Result(
 
           <div className="graph graph7 leftgraph" id='graph7'>
 
-          {
+            {
               g7.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -1636,13 +1652,13 @@ function Result(
 
           <div className="graph graph8 leftgraph" id='graph8'>
 
-          {
+            {
               g8.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -1829,9 +1845,9 @@ function Result(
               g9.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -2017,13 +2033,13 @@ function Result(
 
           <div className="graph graph10 leftgraph" id='graph10'>
 
-          {
+            {
               g10.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -2214,17 +2230,31 @@ function Result(
 
         </div>
 
+        {/* <div className="ranger mb-2">
+          <div className='date'>
+            <div className="fromRes me-3">
+              <p className='me-3'>From</p>
+              <DatePicker value={fromDate} onChange={changeFromDate} format='dd-MM-y' yearPlaceholder='yyyy' monthPlaceholder='mm' dayPlaceholder='dd' />
+            </div>
+
+            <div className="fromRes ">
+              <p className='me-3'>To</p>
+              <DatePicker value={toDate} onChange={changeToDate} format='dd-MM-y' yearPlaceholder='yyyy' monthPlaceholder='mm' dayPlaceholder='dd' />
+            </div>
+          </div>
+        </div> */}
+
         <div className="graph_right">
 
           <div className="graph graph11 rightgraph" id='graph11'>
 
-          {
+            {
               g11.notification ?
 
                 <div className="bellIcon">
-                  <div class="tooltip">
+                  <div className="tooltip">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bell-fill" viewBox="0 0 16 16">
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                     </svg>
 
@@ -2428,8 +2458,8 @@ function Result(
 
 
       <div className="map_container">
-        <Map 
-        g12={g12} setG12={setG12}
+        <Map
+          g12={g12} setG12={setG12}
         />
       </div>
 
@@ -2455,7 +2485,7 @@ function Result(
         g8Flag={g8.notification}
         g9Flag={g9.notification}
         g10Flag={g10.notification}
-        
+
 
       />
 

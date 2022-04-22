@@ -55,7 +55,7 @@ function Map({ g12 }) {
                     </LayersControl.BaseLayer>
 
                     <LayersControl.Overlay name="Filled Line">
-                        <Polygon color='red' weight={1} fillColor="blue" positions={coordinates} fillOpacity={0} />
+                        <Polygon color='red' weight={1} fillColor="blue" positions={coordinates} fillOpacity={0.1} />
                     </LayersControl.Overlay>
 
                 </LayersControl>

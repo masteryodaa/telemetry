@@ -125,6 +125,12 @@ header {
   margin-right: 2rem;
 }
 
+.fromRes{
+  display: flex;
+  height: min-content;
+  align-items: baseline;
+}
+
 .btn {
   border-radius: 20px;
 }
@@ -343,6 +349,7 @@ a {
   align-items: center;
   width: 50vw;
   height: 85vh;
+  /* align-self: center; */
 }
 
 .graph{
@@ -396,6 +403,7 @@ a {
   margin-right: 2rem;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
+  z-index: 1;
 }
 
 

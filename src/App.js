@@ -63,6 +63,8 @@ function App() {
                 <Route path="/result" element={
                   <Result
 
+                    loaded={loaded} setLoaded={setLoaded} setFailed={setFailed} failed={failed}
+
                     g1={g1}
                     g2={g2}
                     g3={g3}
