@@ -314,7 +314,7 @@ a {
   margin-right: 2rem;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
-  z-index: 1;
+  z-index: -10;
 }
 
 

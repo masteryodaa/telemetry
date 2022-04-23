@@ -1,10 +1,11 @@
-import React, { useEffect,
-  //  useState
-    } from 'react'
+import React, {
+  useEffect,
+  useState
+} from 'react'
 import Plot from 'react-plotly.js';
 import Sidenav from './Sidenav';
 import Map from './Map';
-// import DatePicker from 'react-date-picker';
+import DatePicker from 'react-date-picker';
 
 
 
@@ -29,19 +30,102 @@ function Result(
     setG12(g12);
   }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12]);
 
-  // const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
-  // const [toDate, setToDate] = useState(new Date('2021/05/25'));
 
-  // const changeFromDate = (date) => {
-  //   setFromDate(date);
-    
-    
-  // }
 
-  // const changeToDate = (date) => {
-  //   setToDate(date)
-  // } 
-  
+  const sendNewData = () => {
+
+    console.log('sending new data');
+
+    setLoaded(false);
+    setFailed(false);
+
+    const data = {
+      'vessel': JSON.parse(localStorage.getItem('vessel')),
+      'fromDate': new Date(localStorage.getItem('fromDate')),
+      'toDate': new Date(localStorage.getItem('toDate')),
+      'inputDate': new Date(localStorage.getItem('inputDate')),
+      'alert': {
+        'value': {
+          'independent': JSON.parse(localStorage.getItem('independent')),
+          'dependent': JSON.parse(localStorage.getItem('dependent')),
+        }
+      }
+    }
+
+    console.log(data);
+
+    // localStorage.setItem('data', data); 
+
+    fetch('https://telemetry-api.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(
+        (response) => {
+
+          if (response.status === 200) {
+            setFailed(false);
+            return response.json();
+          }
+          else {
+            console.log('error from server');
+            setFailed(true);
+          }
+
+        }
+      )
+
+      .then(
+        data => {
+          console.log(data);
+
+          setG1(data[Object.keys(data)[0]]);
+          setG2(data[Object.keys(data)[1]]);
+          setG3(data[Object.keys(data)[2]]);
+          setG4(data[Object.keys(data)[3]]);
+          setG5(data[Object.keys(data)[4]]);
+          setG6(data[Object.keys(data)[5]]);
+          setG7(data[Object.keys(data)[6]]);
+          setG8(data[Object.keys(data)[7]]);
+          setG9(data[Object.keys(data)[8]]);
+          setG10(data[Object.keys(data)[9]]);
+          setG11(data[Object.keys(data)[10]]);
+          setG12(data[Object.keys(data)[11]]);
+
+          setLoaded(true);
+
+        }
+      )
+
+      .catch(
+        error => {
+          console.log('try again');
+          setFailed(true);
+          console.log(failed);
+        }
+      )
+
+  }
+
+
+  const [fromDate, setFromDate] = useState(new Date(localStorage.getItem('fromDate')));
+  const [toDate, setToDate] = useState(new Date(localStorage.getItem('toDate')));
+
+  const changeFromDate = (date) => {
+    setFromDate(date);
+    localStorage.setItem('fromDate', date);
+    sendNewData();
+  }
+
+  const changeToDate = (date) => {
+    setToDate(date)
+    localStorage.setItem('toDate', date);
+    sendNewData();
+  }
+
 
 
 
@@ -2232,7 +2316,7 @@ function Result(
 
         </div>
 
-        {/* <div className="ranger mb-2">
+        <div className="ranger mb-2">
           <div className='date'>
             <div className="fromRes me-3">
               <p className='me-3'>From</p>
@@ -2244,7 +2328,7 @@ function Result(
               <DatePicker value={toDate} onChange={changeToDate} format='dd-MM-y' yearPlaceholder='yyyy' monthPlaceholder='mm' dayPlaceholder='dd' />
             </div>
           </div>
-        </div> */}
+        </div>
 
         <div className="graph_right">
 

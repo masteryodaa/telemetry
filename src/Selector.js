@@ -50,8 +50,8 @@ function Selector(props) {
 
 
 
-    const [independentVariables, setIndependentVariables] = useState([options[1]]);
-    const [dependentVariables, setDependentVariables] = useState([options[0]]);
+    const [independentVariables, setIndependentVariables] = useState([]);
+    const [dependentVariables, setDependentVariables] = useState([]);
 
     const [fromDate, setFromDate] = useState(new Date('2021/04/25'));
     const [toDate, setToDate] = useState(new Date('2021/05/25'));
@@ -133,12 +133,12 @@ function Selector(props) {
     const addRow = () => {
         let row = [...rowsData];
         console.log('row', row);
-        
+
         row.forEach(element => {
             if (element.alertName === row.alertName) {
                 row.splice(row.indexOf(element), 1);
 
-                   alertOptions.push({
+                alertOptions.push({
                     value: {
                         alertName: element.alertName,
                         dependent: dependentVariables,
@@ -155,12 +155,12 @@ function Selector(props) {
         let row = [...rowsData];
         row.forEach(element => {
             alertOptions.push({
-               value: {
-                     alertName: element.alertName,
-                        dependent: element.dependent,
-                        independent: element.independent,
-                        days: element.days
-               },
+                value: {
+                    alertName: element.alertName,
+                    dependent: element.dependent,
+                    independent: element.independent,
+                    days: element.days
+                },
                 label: element.alertName
             })
         });
@@ -178,13 +178,22 @@ function Selector(props) {
         props.setFailed(false);
         props.setLoaded(false);
 
+        localStorage.setItem('independent', JSON.stringify(alert.value.independent));
+        localStorage.setItem('dependent', JSON.stringify(alert.value.dependent));
+        localStorage.setItem('fromDate', fromDate);
+        localStorage.setItem('toDate', toDate);
+        localStorage.setItem('inputDate', inputDate);
+        localStorage.setItem('vessel', JSON.stringify(vessel));
+
         const data = {
             'vessel': vessel,
-            'fromDate': fromDate,
-            'toDate': toDate,
-            'inputDate': inputDate,
+            'fromDate': new Date(localStorage.getItem('fromDate')),
+            'toDate': new Date(localStorage.getItem('toDate')),
+            'inputDate': new Date(localStorage.getItem('inputDate')),
             'alert': alert
         }
+
+        console.log(data);
 
         let independentArray = [];
         let dependentArray = [];
@@ -195,7 +204,10 @@ function Selector(props) {
         });
 
 
-        fetch(  
+
+
+
+        fetch(
             // 'http://127.0.0.1:5000/',
             // 'http://127.0.0.1:3001/',
             'https://telemetry-api.herokuapp.com/',
@@ -321,7 +333,7 @@ function Selector(props) {
                         () => {
                             console.log('sending data');
                             sendData();
-                            console.log(alert); 
+                            console.log(alert);
                         }
 
                     }>
