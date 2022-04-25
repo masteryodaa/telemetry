@@ -71,10 +71,10 @@ function Selector(props) {
 
 
     const [rowsData, setRowsData] = useState([{
-        alertName: 'Alert 1',
+        alertName: '',
         dependent: dependentVariables,
         independent: independentVariables,
-        days: '50'
+        days: ''
     }]);
 
     let alertOptions = [
@@ -83,10 +83,15 @@ function Selector(props) {
                 alertName: 'Alert 1',
                 dependent: [options[2]],
                 independent: [options[0], options[1], options[2]],
+                // dependent: dependentVariables,
+                // independent: independentVariables,
                 days: 100
             }, label: 'Alert 1'
         }
     ];
+
+    let independentArray = [];
+    let dependentArray = [];
 
     const [alert, setAlert] = useState([]);
 
@@ -101,12 +106,12 @@ function Selector(props) {
             independent: [],
             days: ''
         }
-        rowsInput['dependent'] = dependentVariables;
-        rowsInput['independent'] = independentVariables;
+        // rowsInput['dependent'] = [];
+        // rowsInput['independent'] = [];
         setRowsData([...rowsData, rowsInput])
 
-        setIndependentVariables([]);
-        setDependentVariables([]);
+        // setIndependentVariables([]);
+        // setDependentVariables([]);
 
     }
     const deleteTableRows = (index) => {
@@ -122,48 +127,53 @@ function Selector(props) {
         rowsInput[index][name] = value;
         // rowsInput.dependent=dependentVariables;
         // rowsInput.independent=independentVariables;
-        rowsInput['dependent'] = dependentVariables;
-        rowsInput['independent'] = independentVariables;
+        // rowsInput['dependent'] = dependentVariables;
+        // rowsInput['independent'] = independentVariables;
         setRowsData(rowsInput);
-
-    }
+    } 
 
 
 
     const addRow = () => {
         let row = [...rowsData];
-        console.log('row', row);
-
+        
         row.forEach(element => {
-            if (element.alertName === row.alertName) {
-                row.splice(row.indexOf(element), 1);
+            // if (element.alertName === row.alertName) {
+            //     row.splice(row.indexOf(element), 1);
 
                 alertOptions.push({
                     value: {
                         alertName: element.alertName,
-                        dependent: dependentVariables,
-                        independent: independentVariables,
+                        independent: independentVariables ,
+                        dependent: [dependentVariables],
                         days: element.days
-                    },
+                    }, 
                     label: element.alertName
                 })
-            }
-        });
+
+            // }
+        }
+        );
+
+
+        console.log('row', row);
+        
+        // alertOptions.splice(1,1);
     }
 
     const saveconfig = () => {
-        let row = [...rowsData];
-        row.forEach(element => {
-            alertOptions.push({
-                value: {
-                    alertName: element.alertName,
-                    dependent: element.dependent,
-                    independent: element.independent,
-                    days: element.days
-                },
-                label: element.alertName
-            })
-        });
+        // let row = [...rowsData];
+        // row.forEach(element => {
+        //     alertOptions.push({
+        //         value: {
+        //             alertName: element.alertName,
+        //             dependent: element.dependent,
+        //             independent: element.independent,
+        //             days: element.days
+        //         },
+        //         label: element.alertName
+        //     })
+        // });
 
 
         // console.log('row', row);
@@ -383,6 +393,9 @@ function Selector(props) {
                                                 <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} options={options}
                                                     dependentVariables={dependentVariables} setDependentVariables={setDependentVariables} independentVariables={independentVariables} setIndependentVariables={setIndependentVariables}
                                                     addRow={addRow}
+
+                                                    independentArray={independentArray}
+                                                    dependentArray={dependentArray}
                                                 />
 
                                             </tbody>

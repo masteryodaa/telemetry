@@ -8,7 +8,6 @@ import Map from './Map';
 import DatePicker from 'react-date-picker';
 
 
-
 function Result(
   { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12,
     setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12, loaded, setLoaded, failed, setFailed
@@ -28,8 +27,10 @@ function Result(
     setG10(g10);
     setG11(g11);
     setG12(g12);
-  }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12]);
 
+    
+  }, [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, setG1, setG2, setG3, setG4, setG5, setG6, setG7, setG8, setG9, setG10, setG11, setG12]);
+  
 
 
   const sendNewData = () => {

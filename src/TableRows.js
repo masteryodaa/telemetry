@@ -6,7 +6,7 @@ const animatedComponents = makeAnimated();
 
 function TableRows({ rowsData, deleteTableRows, handleChange, options,
     dependentVariables, setDependentVariables, independentVariables, setIndependentVariables,
-    frequency, setFrequency, addRow }) {
+    addRow, independentArray, dependentArray }) {
 
 
     return (
@@ -14,7 +14,8 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
 
         rowsData.map((data, index) => {
             const { alertName,
-                dependent, independent, days } = data;
+                // dependent, independent,
+                 days } = data;
             return (
 
                 <tr key={index}>
@@ -29,14 +30,14 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                         <Select
                             closeMenuOnSelect={false}
                             components={animatedComponents}
-                            defaultValue={independent}
+                            // defaultValue={independent}
                             placeholder="Select variables"
                             isMulti
                             options={options}
                             noOptionsMessage={() => "No options"}
+                            // value={independent}
                             onChange={
                                 setIndependentVariables
-
                             }
                             name="independent"
                         />
@@ -49,14 +50,14 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                             classNamePrefix="select"
                             closeMenuOnSelect={true}
                             components={animatedComponents}
-                            defaultValue={dependent}
+                            // defaultValue={dependent}
                             placeholder="Select variable"
                             // isMulti
                             options={options}
                             noOptionsMessage={() => "No options"}
+                            // value={dependent}
                             onChange={
                                 setDependentVariables
-
                             }
                             name="dependent"
                         />
@@ -66,7 +67,7 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                         <input value={days} onChange={(evnt) => (handleChange(index, evnt))} style={{ "width": "60px" }} className='form-control' placeholder="min." name='days' />
                     </td>
 
-                    <td><button className="btn btn-outline-danger" onClick={() =>{ addRow(); console.log('added'); }}>Save</button></td>
+                    <td><button className="btn btn-outline-danger" onClick={() =>{ addRow(); }}>Save</button></td>
 
 
                 </tr>

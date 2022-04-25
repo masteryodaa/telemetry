@@ -23,9 +23,9 @@ function Navbar() {
             </div>
 
 
-            <div className="title">
+            <div className="title" id='aiTitle'>
                 {/* <p id='title'>Telemetry.AI</p> */}
-                <h4 className="aiTitle" disabled>Telemetry Alert System</h4>
+                <h4 className="aiTitle">Telemetry Alert System</h4>
 
             </div>
 
