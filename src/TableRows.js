@@ -15,7 +15,7 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
         rowsData.map((data, index) => {
             const { alertName,
                 // dependent, independent,
-                 days } = data;
+                days } = data;
             return (
 
                 <tr key={index}>
@@ -39,6 +39,12 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                             onChange={
                                 setIndependentVariables
                             }
+                            // onMenuClose={
+                            //     ()=>{
+                            //         independentArray.push(independentVariables);
+                            //         console.log('closed')
+                            //     }
+                            // }
                             name="independent"
                         />
                     </td>
@@ -48,7 +54,7 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                         <Select
                             className="basic-single"
                             classNamePrefix="select"
-                            closeMenuOnSelect={true}
+                            closeMenuOnSelect={false}
                             components={animatedComponents}
                             // defaultValue={dependent}
                             placeholder="Select variable"
@@ -59,6 +65,12 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                             onChange={
                                 setDependentVariables
                             }
+                            // onMenuClose={
+                            //     ()=>{
+                            //         dependentArray.push(dependentVariables);
+                            //         console.log('closed');
+                            //     }
+                            // }
                             name="dependent"
                         />
                     </td>
@@ -67,7 +79,7 @@ function TableRows({ rowsData, deleteTableRows, handleChange, options,
                         <input value={days} onChange={(evnt) => (handleChange(index, evnt))} style={{ "width": "60px" }} className='form-control' placeholder="min." name='days' />
                     </td>
 
-                    <td><button className="btn btn-outline-danger" onClick={() =>{ addRow(); }}>Save</button></td>
+                    <td><button className="btn btn-outline-danger" onClick={() => { addRow(); }}>Save</button></td>
 
 
                 </tr>

@@ -72,8 +72,8 @@ function Selector(props) {
 
     const [rowsData, setRowsData] = useState([{
         alertName: '',
-        dependent: dependentVariables,
-        independent: independentVariables,
+        dependent: [],
+        independent: [],
         days: ''
     }]);
 
@@ -90,9 +90,6 @@ function Selector(props) {
         }
     ];
 
-    let independentArray = [];
-    let dependentArray = [];
-
     const [alert, setAlert] = useState([]);
 
     const addTableRows = () => {
@@ -102,12 +99,12 @@ function Selector(props) {
 
         const rowsInput = {
             alertName: '',
-            dependent: [],
-            independent: [],
+            // dependent: dependentVariables,
+            // independent: independentVariables,
             days: ''
         }
-        // rowsInput['dependent'] = [];
-        // rowsInput['independent'] = [];
+        rowsInput['dependent'] = [];
+        rowsInput['independent'] = [];
         setRowsData([...rowsData, rowsInput])
 
         // setIndependentVariables([]);
@@ -127,10 +124,11 @@ function Selector(props) {
         rowsInput[index][name] = value;
         // rowsInput.dependent=dependentVariables;
         // rowsInput.independent=independentVariables;
-        // rowsInput['dependent'] = dependentVariables;
-        // rowsInput['independent'] = independentVariables;
+        rowsInput['dependent'] = dependentVariables;
+        rowsInput['independent'] = independentVariables;
         setRowsData(rowsInput);
-    } 
+
+    }
 
 
 
@@ -141,23 +139,25 @@ function Selector(props) {
             // if (element.alertName === row.alertName) {
             //     row.splice(row.indexOf(element), 1);
 
+            // let dependentCopy = Object.assign([], dependentVariables);
+            // let independentCopy = Object.assign([], independentVariables);
+
                 alertOptions.push({
                     value: {
                         alertName: element.alertName,
-                        independent: independentVariables ,
                         dependent: [dependentVariables],
+                        independent: independentVariables,
                         days: element.days
-                    }, 
+                    },
                     label: element.alertName
                 })
 
+                // setDependentVariables([]);
+                // setIndependentVariables([]);
             // }
-        }
-        );
+        });
 
-
-        console.log('row', row);
-        
+            console.log('row', row);
         // alertOptions.splice(1,1);
     }
 
@@ -367,7 +367,7 @@ function Selector(props) {
                             <button onClick={saveconfig} type="button" className="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
-                        <div className="modal-body p-0 py-2">
+                        <div className="modal-body p-0 py-2" style={{'height':'500px'}}>
 
 
                             <div className="container d-flex flex-column align-items-center" >
@@ -393,9 +393,6 @@ function Selector(props) {
                                                 <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} options={options}
                                                     dependentVariables={dependentVariables} setDependentVariables={setDependentVariables} independentVariables={independentVariables} setIndependentVariables={setIndependentVariables}
                                                     addRow={addRow}
-
-                                                    independentArray={independentArray}
-                                                    dependentArray={dependentArray}
                                                 />
 
                                             </tbody>
@@ -410,6 +407,8 @@ function Selector(props) {
                             </div>
 
                         </div>
+
+                        <div className="modal-footer mt-4"></div>
 
                     </div>
                 </div>
